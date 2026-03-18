@@ -1,0 +1,3271 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>CASE Ecosystem · Strategic Appeal · Mun D.A.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════
+       DESIGN SYSTEM — BENEVSKY IT HUB
+       Strict inheritance from main project
+    ═══════════════════════════════════════════ */
+    :root {
+      --bg:       #000000;
+      --bg2:      #070707;
+      --bg3:      #0F0F0F;
+      --bg4:      #161616;
+      --bg5:      #1C1C1C;
+      --gold:     #B8935A;
+      --gold2:    #D4AF78;
+      --gold3:    #8B6B3D;
+      --silver:   #7A8A9E;
+      --green:    #2E8A6E;
+      --green2:   #1A5C49;
+      --blue:     #16A34A;
+      --blue2:    #15803D;
+      --text:     #F0F0F2;
+      --text2:    #C2C2D2;
+      --text3:    #828298;
+      --border:   rgba(184, 147, 90, 0.18);
+      --border2:  rgba(255,255,255,0.08);
+      --card-bg:  rgba(10,10,10,0.98);
+      --shadow:   0 24px 72px rgba(0,0,0,0.75);
+      --nav-h:    72px;
+      --radius:   12px;
+      --radius-lg:20px;
+    }
+
+    /* ═══════════════════════════════════════════
+       LIGHT THEME OVERRIDES — Terminal Green palette
+    ═══════════════════════════════════════════ */
+    [data-theme="light"] {
+      --bg:       #F0FDF4;          /* barely-green white base */
+      --bg2:      #DCFCE7;          /* soft green-tinted surface */
+      --bg3:      #FFFFFF;          /* pure white cards */
+      --bg4:      #D1FAE5;          /* interactive / hover states */
+      --bg5:      #A7F3D0;
+      --gold:     #16A34A;          /* terminal green as primary accent */
+      --gold2:    #15803D;          /* darker green for hover */
+      --gold3:    #34D399;          /* muted emerald for subtle accents */
+      --silver:   #4B7A62;
+      --green:    #15803D;
+      --green2:   #14532D;
+      --blue:     #16A34A;
+      --blue2:    #15803D;
+      --text:     #052E16;
+      --text2:    #14532D;
+      --text3:    #4B7A62;
+      --border:   rgba(22,163,74,0.15);
+      --border2:  rgba(22,163,74,0.08);
+      --card-bg:  rgba(255,255,255,0.98);
+      --shadow:   0 24px 72px rgba(22,163,74,0.08);
+    }
+
+    [data-theme="light"] nav {
+      background: rgba(240,253,244,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom-color: rgba(22,163,74,0.08);
+    }
+    [data-theme="light"] .nav-logo-main { color: #052E16; }
+    [data-theme="light"] .nav-logo-sub  { color: #16A34A; }
+
+    [data-theme="light"] ::-webkit-scrollbar-track { background: #DCFCE7; }
+    [data-theme="light"] ::-webkit-scrollbar-thumb { background: #4ADE80; }
+
+    [data-theme="light"] .hero::before {
+      background: radial-gradient(ellipse, rgba(22,163,74,0.07) 0%, transparent 70%);
+    }
+    [data-theme="light"] .cta-section::before {
+      background: radial-gradient(ellipse, rgba(22,163,74,0.06) 0%, transparent 70%);
+    }
+
+    [data-theme="light"] .hero-gradient-text {
+      background: linear-gradient(135deg, #052E16 0%, #16A34A 45%, #34D399 55%, #052E16 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    [data-theme="light"] .hero-label {
+      background: rgba(22,163,74,0.06);
+      border-color: rgba(22,163,74,0.18);
+    }
+    [data-theme="light"] .hero-addressee {
+      background: #FFFFFF;
+      border-color: rgba(22,163,74,0.14);
+      box-shadow: 0 4px 20px rgba(22,163,74,0.06);
+    }
+    [data-theme="light"] .hero-label-dot { background: #16A34A; }
+
+    [data-theme="light"] .traction { background: #DCFCE7; }
+    [data-theme="light"] .traction-card { background: #FFFFFF; box-shadow: 0 2px 12px rgba(22,163,74,0.06); }
+    [data-theme="light"] .traction-card:hover { background: #F0FDF4; box-shadow: 0 4px 20px rgba(22,163,74,0.1); }
+
+    [data-theme="light"] .letter-body {
+      background: #FFFFFF;
+      box-shadow: 0 2px 32px rgba(22,163,74,0.06);
+    }
+    [data-theme="light"] .quote-block {
+      background: #DCFCE7;
+      border-left-color: #16A34A;
+    }
+    [data-theme="light"] .quote-block::before { color: #16A34A; }
+
+    [data-theme="light"] .bevi-card { background: #FFFFFF; box-shadow: 0 2px 12px rgba(22,163,74,0.05); }
+    [data-theme="light"] .bevi-card:hover { background: #F0FDF4; box-shadow: 0 6px 20px rgba(22,163,74,0.09); }
+    [data-theme="light"] .bevi-card-icon.gold-bg  { background: rgba(22,163,74,0.10); }
+    [data-theme="light"] .bevi-card-icon.blue-bg  { background: rgba(22,163,74,0.10); }
+    [data-theme="light"] .bevi-card-icon.green-bg { background: rgba(21,122,80,0.10); }
+    [data-theme="light"] .bevi-card-icon.silver-bg{ background: rgba(90,106,126,0.10); }
+
+    [data-theme="light"] .timeline-dot { background: #DCFCE7; border-color: rgba(22,163,74,0.15); }
+    [data-theme="light"] .timeline-step.done .timeline-dot     { background: rgba(21,122,80,0.12); border-color: var(--green); }
+    [data-theme="light"] .timeline-step.active .timeline-dot   { background: rgba(22,163,74,0.12); border-color: var(--blue); }
+    [data-theme="light"] .timeline-step.upcoming .timeline-dot { background: rgba(22,163,74,0.06); border-color: rgba(22,163,74,0.2); }
+
+    [data-theme="light"] .partners-strip { background: #DCFCE7; }
+    [data-theme="light"] .partner-tag { background: #FFFFFF; box-shadow: 0 1px 6px rgba(22,163,74,0.06); border-color: rgba(22,163,74,0.1); }
+
+    [data-theme="light"] .alignment-panel { background: #FFFFFF; box-shadow: 0 2px 12px rgba(22,163,74,0.05); }
+    [data-theme="light"] .alignment-arrow { background: #DCFCE7; color: #16A34A; }
+
+    [data-theme="light"] .synergy-item { background: #FFFFFF; box-shadow: 0 1px 8px rgba(22,163,74,0.05); }
+    [data-theme="light"] .synergy-item:hover { background: #F0FDF4; box-shadow: 0 4px 16px rgba(22,163,74,0.08); }
+
+    [data-theme="light"] .lang-switcher { background: #FFFFFF; border-color: rgba(22,163,74,0.12); }
+    [data-theme="light"] .lang-btn.active { background: #16A34A; color: #fff; }
+    [data-theme="light"] .lang-btn:hover  { color: #16A34A; }
+
+    [data-theme="light"] .btn-outline {
+      color: var(--text2);
+      border-color: rgba(22,163,74,0.2);
+    }
+    [data-theme="light"] .btn-outline:hover { border-color: #16A34A; color: #16A34A; }
+
+    [data-theme="light"] footer { background: #DCFCE7; }
+    [data-theme="light"] .signoff { border-top-color: rgba(22,163,74,0.1); }
+
+    [data-theme="light"] .nav-badge {
+      border-color: rgba(22,163,74,0.3);
+      color: #16A34A;
+    }
+
+    /* ─── THEME TOGGLE BUTTON ─── */
+    .theme-btn {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--bg4);
+      border: 1px solid var(--border2);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .theme-btn:hover {
+      border-color: var(--gold3);
+      background: var(--bg3);
+    }
+    .theme-btn .icon-dark { display: none; }
+    .theme-btn .icon-light { display: block; }
+    [data-theme="light"] .theme-btn .icon-dark  { display: block; }
+    [data-theme="light"] .theme-btn .icon-light { display: none; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Urbanist', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--gold3); border-radius: 2px; }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4, .fw-bold { font-weight: 800; }
+    .fw-light  { font-weight: 300; }
+    .fw-medium { font-weight: 500; }
+    .fw-semi   { font-weight: 600; }
+    .gold { color: var(--gold); }
+    .gold2 { color: var(--gold2); }
+    .silver { color: var(--silver); }
+    .text2 { color: var(--text2); }
+    .text3 { color: var(--text3); }
+    .green { color: var(--green); }
+    .blue  { color: var(--blue); }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container--wide {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(0,0,0,0.90);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border2);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-decoration: none;
+    }
+    .nav-logo-main {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.22em;
+      color: var(--text);
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-logo:hover .nav-logo-main { color: var(--gold); }
+    .nav-logo-sub {
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      color: var(--text3);
+      text-transform: uppercase;
+    }
+    .nav-logo-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-badge {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border: 1px solid var(--gold3);
+      padding: 4px 10px;
+      border-radius: 20px;
+      opacity: 0.8;
+    }
+    /* ─── LANG SWITCHER ─── */
+    .lang-switcher {
+      display: flex;
+      background: var(--bg4);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text3);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .lang-btn:hover { color: var(--text2); }
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    /* ═══════════════════════════════════════════
+       MULTILANG — visibility toggle (with !important to prevent specificity conflicts)
+    ═══════════════════════════════════════════ */
+    [data-lang-ru], [data-lang-en], [data-lang-kz] { display: none !important; }
+    span[data-lang-ru], span[data-lang-en], span[data-lang-kz] { display: none !important; }
+    li[data-lang-ru], li[data-lang-en], li[data-lang-kz] { display: none !important; }
+
+    [data-lang="ru"] [data-lang-ru] { display: block !important; }
+    [data-lang="en"] [data-lang-en] { display: block !important; }
+    [data-lang="kz"] [data-lang-kz] { display: block !important; }
+    [data-lang="ru"] span[data-lang-ru] { display: inline !important; }
+    [data-lang="en"] span[data-lang-en] { display: inline !important; }
+    [data-lang="kz"] span[data-lang-kz] { display: inline !important; }
+    /* li elements must show as flex to preserve roadmap-milestones layout */
+    [data-lang="ru"] li[data-lang-ru] { display: flex !important; }
+    [data-lang="en"] li[data-lang-en] { display: flex !important; }
+    [data-lang="kz"] li[data-lang-kz] { display: flex !important; }
+
+    /* ═══════════════════════════════════════════
+       PREMIUM ANIMATIONS
+    ═══════════════════════════════════════════ */
+    @keyframes scanLine {
+      0%   { transform: translateY(-100%); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    @keyframes gridPulse {
+      0%, 100% { opacity: 0.03; }
+      50% { opacity: 0.07; }
+    }
+    @keyframes nodeFloat {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-6px) scale(1.02); }
+    }
+    @keyframes lineGrow {
+      from { stroke-dashoffset: 300; opacity: 0; }
+      to   { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes orbitPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184,147,90,0); }
+      50%       { box-shadow: 0 0 0 8px rgba(184,147,90,0.08); }
+    }
+    @keyframes heroGlowShift {
+      0%   { transform: translateX(-50%) scale(1); opacity: 0.07; }
+      50%  { transform: translateX(-50%) scale(1.15); opacity: 0.12; }
+      100% { transform: translateX(-50%) scale(1); opacity: 0.07; }
+    }
+    @keyframes counterGlow {
+      0%, 100% { text-shadow: 0 0 0 transparent; }
+      50% { text-shadow: 0 0 20px rgba(184,147,90,0.4); }
+    }
+    @keyframes borderTrace {
+      0%   { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glitchFlash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.75; }
+    }
+
+    /* ── NEW PREMIUM: gradient text shift ── */
+    @keyframes gradientFlow {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    /* ── Terminal cursor blink ── */
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    /* ── Shimmer sweep ── */
+    @keyframes shimmerSweep {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    /* ── Neon glow pulse ── */
+    @keyframes neonPulse {
+      0%, 100% { box-shadow: 0 0 6px rgba(22,163,74,0.2), 0 0 20px rgba(22,163,74,0.08); }
+      50%       { box-shadow: 0 0 12px rgba(22,163,74,0.35), 0 0 40px rgba(22,163,74,0.15); }
+    }
+    /* ── Neon glow pulse gold (dark) ── */
+    @keyframes neonPulseGold {
+      0%, 100% { box-shadow: 0 0 6px rgba(184,147,90,0.2), 0 0 20px rgba(184,147,90,0.08); }
+      50%       { box-shadow: 0 0 12px rgba(184,147,90,0.35), 0 0 40px rgba(184,147,90,0.15); }
+    }
+    /* ── Float particles ── */
+    @keyframes particleFloat {
+      0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
+      33%  { transform: translateY(-20px) translateX(8px) scale(1.1); opacity: 0.8; }
+      66%  { transform: translateY(-10px) translateX(-6px) scale(0.9); opacity: 0.6; }
+      100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
+    }
+    /* ── Typing caret appear ── */
+    @keyframes typeIn {
+      from { width: 0; }
+      to   { width: 100%; }
+    }
+    /* ── Slide in from right ── */
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(32px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    /* ── Rotate glow ring ── */
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    /* ── Data stream (scanlines) ── */
+    @keyframes dataStream {
+      0%   { background-position: 0 0; }
+      100% { background-position: 0 60px; }
+    }
+
+    /* ──────────────────────────────────────────
+       ANIMATED GRADIENT TEXT (live gradient shift)
+    ────────────────────────────────────────── */
+    .hero-gradient-text {
+      background-size: 200% 200% !important;
+      animation: gradientFlow 6s ease-in-out infinite;
+    }
+
+    /* ──────────────────────────────────────────
+       TERMINAL CURSOR on accent labels
+    ────────────────────────────────────────── */
+    .hero-label::after {
+      content: '▋';
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 0.85em;
+      color: var(--gold);
+      animation: cursorBlink 1s step-start infinite;
+      vertical-align: middle;
+    }
+
+    /* ──────────────────────────────────────────
+       SHIMMER on traction numbers
+    ────────────────────────────────────────── */
+    .traction-num {
+      position: relative;
+      overflow: hidden;
+    }
+    .traction-num::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255,255,255,0.15) 40%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0.15) 60%,
+        transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmerSweep 4s ease-in-out infinite;
+      pointer-events: none;
+      border-radius: 4px;
+    }
+
+    /* ──────────────────────────────────────────
+       NEON GLOW on CTA button (dark theme)
+    ────────────────────────────────────────── */
+    .btn-primary {
+      animation: neonPulseGold 4s ease-in-out infinite;
+    }
+    .btn-primary:hover {
+      animation: none;
+    }
+    [data-theme="light"] .btn-primary {
+      animation: neonPulse 4s ease-in-out infinite;
+    }
+
+    /* ──────────────────────────────────────────
+       3D TILT on bevi/traction cards
+    ────────────────────────────────────────── */
+    .bevi-card, .traction-card {
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .bevi-card:hover {
+      transform: perspective(800px) rotateX(-2deg) rotateY(2deg) translateY(-4px);
+    }
+    .traction-card:hover {
+      transform: perspective(600px) rotateX(-1.5deg) rotateY(1.5deg) translateY(-3px);
+    }
+
+    /* ──────────────────────────────────────────
+       SCANLINE overlay in light theme hero
+    ────────────────────────────────────────── */
+    [data-theme="light"] .hero::after {
+      background-image:
+        linear-gradient(rgba(22,163,74,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,163,74,0.05) 1px, transparent 1px),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(22,163,74,0.02) 2px,
+          rgba(22,163,74,0.02) 4px
+        );
+      background-size: 60px 60px, 60px 60px, 100% 4px;
+      animation: gridPulse 6s ease-in-out infinite, dataStream 8s linear infinite;
+    }
+
+    /* ──────────────────────────────────────────
+       FLOATING PARTICLES in hero (pseudo)
+    ────────────────────────────────────────── */
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-particles span {
+      position: absolute;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.3;
+      animation: particleFloat var(--dur, 8s) ease-in-out var(--delay, 0s) infinite;
+    }
+    [data-theme="light"] .hero-particles span { background: #16A34A; }
+
+    /* ──────────────────────────────────────────
+       ANIMATED BORDER on letter-body
+    ────────────────────────────────────────── */
+    .letter-body {
+      position: relative;
+    }
+    .letter-body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg,
+        var(--gold) 0%,
+        transparent 40%,
+        transparent 60%,
+        var(--gold3) 100%);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.3;
+      pointer-events: none;
+      background-size: 200% 200%;
+      animation: gradientFlow 8s ease-in-out infinite;
+    }
+
+    /* ──────────────────────────────────────────
+       CODE STYLE tags in CASEM methodology
+    ────────────────────────────────────────── */
+    .casem-tag {
+      font-family: 'Courier New', 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.01em;
+      transition: all 0.2s ease;
+    }
+    .casem-tag:hover {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    /* ──────────────────────────────────────────
+       GLOW ring on section heading accent
+    ────────────────────────────────────────── */
+    .section-title-accent {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title-accent::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold3), var(--gold));
+      background-size: 200% 100%;
+      animation: borderTrace 3s linear infinite;
+      border-radius: 1px;
+    }
+
+    /* ──────────────────────────────────────────
+       LIGHT THEME: terminal monitor feel
+    ────────────────────────────────────────── */
+    [data-theme="light"] .letter-stat-num {
+      font-family: 'Courier New', monospace;
+      letter-spacing: -0.02em;
+    }
+    [data-theme="light"] .traction-num {
+      font-family: 'Courier New', monospace;
+    }
+    [data-theme="light"] .bevi-card {
+      animation: neonPulse 6s ease-in-out infinite;
+      animation-delay: var(--card-delay, 0s);
+    }
+    [data-theme="light"] .bevi-card:hover {
+      animation: none;
+    }
+    [data-theme="light"] .traction-card {
+      border: 1px solid rgba(22,163,74,0.08);
+    }
+    [data-theme="light"] .traction-card:hover {
+      box-shadow: 0 0 20px rgba(22,163,74,0.12), 0 8px 24px rgba(22,163,74,0.08);
+    }
+
+    /* ──────────────────────────────────────────
+       STAGGER delays for bevi cards
+    ────────────────────────────────────────── */
+    .bevi-card:nth-child(1) { --card-delay: 0s; }
+    .bevi-card:nth-child(2) { --card-delay: 1.5s; }
+    .bevi-card:nth-child(3) { --card-delay: 3s; }
+    .bevi-card:nth-child(4) { --card-delay: 4.5s; }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero {
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Futuristic grid background */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(184,147,90,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,147,90,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridPulse 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 600px;
+      background: radial-gradient(ellipse, rgba(184,147,90,0.10) 0%, rgba(22,163,74,0.04) 40%, transparent 70%);
+      animation: heroGlowShift 8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Scan line */
+    .hero-scanline {
+      position: absolute;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(184,147,90,0.3), transparent);
+      animation: scanLine 8s linear infinite;
+      pointer-events: none;
+    }
+    [data-theme="light"] .hero-scanline {
+      background: linear-gradient(90deg, transparent, rgba(22,163,74,0.35), transparent);
+      z-index: 2;
+    }
+    [data-theme="light"] .hero::after {
+      background-image:
+        linear-gradient(rgba(22,163,74,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,163,74,0.05) 1px, transparent 1px);
+    }
+    [data-theme="light"] .hero::before {
+      background: radial-gradient(ellipse, rgba(22,163,74,0.07) 0%, transparent 70%);
+    }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+    .hero-label-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      max-width: 820px;
+    }
+    .hero-gradient-text {
+      background: linear-gradient(135deg, var(--text) 0%, var(--gold2) 50%, var(--text) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-addressee {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      max-width: 560px;
+    }
+    .hero-addressee-icon {
+      width: 40px; height: 40px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .hero-addressee-label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 4px;
+    }
+    .hero-addressee-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .hero-addressee-title {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.4;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text3);
+    }
+    .hero-meta-item svg { opacity: 0.5; }
+
+    /* ═══════════════════════════════════════════
+       DIVIDER
+    ═══════════════════════════════════════════ */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       TRACTION STRIP
+    ═══════════════════════════════════════════ */
+    .traction {
+      padding: 64px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+    }
+    .traction-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .traction-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .traction-card {
+      padding: 28px 24px;
+      background: var(--bg3);
+      text-align: center;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .traction-card:hover { background: var(--bg4); }
+    .traction-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .traction-card:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+    .traction-number {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .traction-desc {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.4;
+    }
+    .traction-card-accent {
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 2px;
+      background: var(--gold);
+      border-radius: 0 0 2px 2px;
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTIONS
+    ═══════════════════════════════════════════ */
+    section {
+      padding: 80px 0;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 16px;
+    }
+    .section-tag::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%; transform: translateY(-50%);
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .section-h2 {
+      font-size: clamp(24px, 3.5vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+    .section-lead {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text2);
+      max-width: 680px;
+      margin-bottom: 48px;
+      line-height: 1.75;
+    }
+
+    /* ═══════════════════════════════════════════
+       INTRO LETTER BLOCK
+    ═══════════════════════════════════════════ */
+    .letter-body {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      margin-bottom: 40px;
+    }
+    .letter-salutation {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text2);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .letter-para {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text2);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .letter-para strong, .letter-para b {
+      color: var(--text);
+      font-weight: 700;
+    }
+    .letter-highlight {
+      display: inline;
+      color: var(--gold2);
+      font-weight: 700;
+    }
+    /* ─── LETTER INLINE STATS STRIP ─── */
+    .letter-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin: 28px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .letter-stat {
+      background: var(--bg4);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .letter-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      animation: counterGlow 3s ease-in-out infinite;
+    }
+    .letter-stat-label {
+      font-size: 11px;
+      color: var(--text2);
+      line-height: 1.4;
+    }
+    [data-theme="light"] .letter-stat { background: #DCFCE7; border-color: rgba(22,163,74,0.1); }
+
+    /* ─── LETTER INFO ROW (two column) ─── */
+    .letter-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .letter-info-box {
+      background: var(--bg4);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .letter-info-box-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: rgba(184,147,90,0.12);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+    }
+    .letter-info-box-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .letter-info-box-text {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    [data-theme="light"] .letter-info-box { background: #DCFCE7; border-color: rgba(22,163,74,0.12); }
+
+    /* ─── PROBLEM/SOLUTION SPLIT ─── */
+    .letter-problem-solution {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 28px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .lps-panel {
+      padding: 24px;
+      background: var(--bg4);
+    }
+    .lps-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lps-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .lps-text {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+    .lps-text strong { color: var(--text); }
+    [data-theme="light"] .lps-panel { background: #DCFCE7; border-color: rgba(22,163,74,0.08); }
+
+    /* ═══════════════════════════════════════════
+       CASEM METHODOLOGY
+    ═══════════════════════════════════════════ */
+    .bevi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .bevi-card {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .bevi-card:hover {
+      border-color: var(--gold3);
+      transform: translateY(-2px);
+    }
+    .bevi-card-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+    .bevi-card-icon.gold-bg  { background: rgba(184,147,90,0.15); }
+    .bevi-card-icon.blue-bg  { background: rgba(22,163,74,0.15); }
+    .bevi-card-icon.green-bg { background: rgba(46,138,110,0.15); }
+    .bevi-card-icon.silver-bg{ background: rgba(122,138,158,0.12); }
+    .bevi-card-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .bevi-card-sub {
+      font-size: 11px;
+      color: var(--text3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .bevi-card-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    .bevi-badge {
+      display: inline-block;
+      background: rgba(184,147,90,0.12);
+      border: 1px solid rgba(184,147,90,0.25);
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    /* ─── CASEM TABLE (5 criteria rows) ─── */
+    .casem-table {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .casem-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border2);
+      transition: background 0.2s;
+    }
+    .casem-row:last-child { border-bottom: none; }
+    .casem-row:hover { background: var(--bg4); }
+    .casem-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 28px 22px 24px;
+      border-right: 1px solid var(--border2);
+    }
+    .casem-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .casem-category {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    .casem-method {
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 0.05em;
+    }
+    .casem-right {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 22px 24px;
+    }
+    .casem-tag {
+      background: var(--bg4);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: var(--text2);
+      white-space: nowrap;
+    }
+    [data-theme="light"] .casem-table { border-color: rgba(22,163,74,0.1); }
+    [data-theme="light"] .casem-row   { border-bottom-color: rgba(22,163,74,0.08); }
+    [data-theme="light"] .casem-left  { border-right-color: rgba(22,163,74,0.08); }
+    [data-theme="light"] .casem-row:hover { background: #F0F5FF; }
+    [data-theme="light"] .casem-tag   { background: #D1FAE5; border-color: rgba(22,163,74,0.18); color: #14532D; }
+    @media (max-width: 640px) {
+      .casem-row   { grid-template-columns: 1fr; }
+      .casem-left  { border-right: none; border-bottom: 1px solid var(--border2); padding: 18px 20px; }
+      .casem-right { padding: 14px 20px 18px; }
+    }
+
+    /* ═══════════════════════════════════════════
+       STRATEGIC ALIGNMENT
+    ═══════════════════════════════════════════ */
+    .alignment-split {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 2px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .alignment-panel {
+      padding: 40px;
+      background: var(--bg3);
+    }
+    .alignment-panel-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alignment-panel-label .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .alignment-panel-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .alignment-panel-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text2);
+      line-height: 1.75;
+    }
+    .alignment-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg4);
+      padding: 20px;
+      font-size: 24px;
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════
+       SYNERGY / COOPERATION
+    ═══════════════════════════════════════════ */
+    .synergy-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .synergy-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      transition: background 0.25s, border-left-color 0.25s;
+    }
+    .synergy-item:hover {
+      background: var(--bg4);
+      border-left-color: var(--gold2);
+    }
+    .synergy-number {
+      width: 32px; height: 32px;
+      background: var(--gold);
+      color: var(--bg);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .synergy-content-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .synergy-content-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════
+       PARTNERS STRIP
+    ═══════════════════════════════════════════ */
+    .partners-strip {
+      padding: 40px 0;
+      border-top: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+    }
+    .partners-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text3);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .partners-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .partner-tag {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text2);
+      letter-spacing: 0.05em;
+      transition: all 0.25s;
+    }
+    .partner-tag:hover {
+      border-color: var(--gold3);
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA / FOOTER AREA
+    ═══════════════════════════════════════════ */
+    .cta-section {
+      padding: 100px 0 80px;
+      text-align: center;
+      position: relative;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(184,147,90,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .cta-headline {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .cta-sub {
+      font-size: 16px;
+      color: var(--text2);
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 14px 28px;
+      transition: all 0.25s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg);
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 0 rgba(184,147,90,0);
+    }
+    .btn-primary:hover {
+      background: var(--gold2);
+      border-color: var(--gold2);
+      box-shadow: 0 0 32px rgba(184,147,90,0.3);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text2);
+      border: 2px solid var(--border2);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold3);
+      color: var(--gold);
+    }
+
+    /* ─── SIGNOFF ─── */
+    .signoff {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border2);
+      min-width: 320px;
+      text-align: left;
+    }
+    .signoff-farewell {
+      font-style: italic;
+      color: var(--text2);
+      font-size: 15px;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    .signoff-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      width: 100%;
+    }
+    .signoff-title {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    .signoff-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: 100%;
+    }
+    .signoff-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .signoff-contact-item:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════════
+       FOOTER NAV
+    ═══════════════════════════════════════════ */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border2);
+      padding: 28px 0;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .footer-link {
+      font-size: 12px;
+      color: var(--text3);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--gold); }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    /* ═══════════════════════════════════════════
+       QUARTERLY ROADMAP GRID
+    ═══════════════════════════════════════════ */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .roadmap-card {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .roadmap-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .roadmap-card.done::before   { background: var(--green); }
+    .roadmap-card.active::before { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+    .roadmap-card.soon::before   { background: var(--blue); opacity: 0.6; }
+    .roadmap-card.future::before { background: var(--silver); opacity: 0.4; }
+    .roadmap-card.done   { border-left: 2px solid var(--green); }
+    .roadmap-card.active {
+      border-left: 2px solid var(--gold);
+      box-shadow: 0 0 28px rgba(184,147,90,0.10);
+    }
+    .roadmap-card.soon   { border-left: 2px solid var(--blue); opacity: 0.92; }
+    .roadmap-card.future { border-left: 2px solid var(--silver); opacity: 0.7; }
+    .roadmap-card:hover { transform: translateY(-2px); border-color: var(--gold3); opacity: 1; }
+    .roadmap-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .roadmap-quarter {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .roadmap-card.done   .roadmap-quarter { color: var(--green); }
+    .roadmap-card.active .roadmap-quarter { color: var(--gold); }
+    .roadmap-card.soon   .roadmap-quarter { color: var(--blue); }
+    .roadmap-card.future .roadmap-quarter { color: var(--silver); }
+    .roadmap-status-badge {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 10px;
+    }
+    .roadmap-card.done   .roadmap-status-badge { background: rgba(46,138,110,0.15); color: var(--green); }
+    .roadmap-card.active .roadmap-status-badge { background: rgba(184,147,90,0.18); color: var(--gold); }
+    .roadmap-card.soon   .roadmap-status-badge { background: rgba(22,163,74,0.12); color: var(--blue); }
+    .roadmap-card.future .roadmap-status-badge { background: rgba(122,138,158,0.12); color: var(--silver); }
+    .roadmap-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .roadmap-milestones {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .roadmap-milestones li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+    .roadmap-milestones li::before {
+      content: '—';
+      color: var(--text3);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .roadmap-milestones strong { color: var(--text); font-weight: 700; }
+    .roadmap-card.active .roadmap-milestones li { color: var(--text); }
+
+    [data-theme="light"] .roadmap-card { background: #FFFFFF; box-shadow: 0 2px 12px rgba(22,163,74,0.06); border-color: rgba(22,163,74,0.1); }
+    [data-theme="light"] .roadmap-card:hover { border-color: #16A34A; box-shadow: 0 6px 20px rgba(22,163,74,0.1); }
+
+    /* ═══════════════════════════════════════════
+       SUPPORTERS BLOCK
+    ═══════════════════════════════════════════ */
+    .supporters-section {
+      padding: 80px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+    }
+    .supporters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 40px;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .supporter-card {
+      background: var(--bg3);
+      border-right: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background 0.2s;
+      cursor: default;
+      position: relative;
+    }
+    /* Remove right border on last in each row */
+    .supporter-card:nth-child(4n) { border-right: none; }
+    /* Remove bottom border on last row */
+    .supporter-card:nth-last-child(-n+4) { border-bottom: none; }
+    /* Top accent line per card (gold by default) */
+    .supporter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20px; right: 20px;
+      height: 2px;
+      background: var(--sc-accent, var(--gold3));
+      border-radius: 0 0 2px 2px;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .supporter-card:hover { background: var(--bg4); }
+    .supporter-card:hover::before { opacity: 1; }
+    .supporter-type {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sc-accent, var(--gold3));
+      font-weight: 800;
+    }
+    .supporter-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+    /* Accent color per card */
+    .sc-gold   { --sc-accent: var(--gold); }
+    .sc-blue   { --sc-accent: var(--blue); }
+    .sc-green  { --sc-accent: var(--green); }
+    .sc-silver { --sc-accent: var(--silver); }
+    .sc-purple { --sc-accent: #A855F7; }
+    .sc-orange { --sc-accent: #E07830; }
+    .sc-teal   { --sc-accent: #3DBF96; }
+    .sc-red    { --sc-accent: #E05068; }
+
+    [data-theme="light"] .supporter-card { background: #FFFFFF; border-color: rgba(22,163,74,0.07); }
+    [data-theme="light"] .supporter-card:hover { background: #F0FDF4; }
+    [data-theme="light"] .supporters-section { background: #DCFCE7; }
+    [data-theme="light"] .supporter-name { color: var(--text); }
+    [data-theme="light"] .supporters-grid { border-color: rgba(22,163,74,0.1); }
+
+    @media (max-width: 768px) {
+      .roadmap-grid { grid-template-columns: 1fr; }
+      .supporters-grid { grid-template-columns: repeat(3, 1fr); }
+      .supporter-card:nth-child(4n) { border-right: 1px solid var(--border2); }
+      .supporter-card:nth-child(3n) { border-right: none; }
+      .supporter-card:nth-last-child(-n+4) { border-bottom: 1px solid var(--border2); }
+      .supporter-card:nth-last-child(-n+3) { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .supporters-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ═══════════════════════════════════════════
+       ECOSYSTEM DIAGRAM
+    ═══════════════════════════════════════════ */
+    .ecosystem-section {
+      padding: 80px 0;
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+    }
+    .ecosystem-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(184,147,90,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,147,90,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .ecosystem-diagram {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      margin: 48px auto 0;
+    }
+    .ecosystem-svg-wrap {
+      position: absolute;
+      inset: 0;
+    }
+    /* Center node */
+    .eco-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140px; height: 140px;
+      background: linear-gradient(135deg, var(--bg4), var(--bg3));
+      border: 1.5px solid var(--gold);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 0 40px rgba(184,147,90,0.15), 0 0 80px rgba(184,147,90,0.05);
+      animation: orbitPulse 3s ease-in-out infinite;
+    }
+    .eco-center-label {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+    .eco-center-sub {
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-top: 4px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    /* Orbit ring */
+    .eco-orbit {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 380px; height: 380px;
+      margin-left: -190px; margin-top: -190px;
+      border: 1px solid rgba(184,147,90,0.12);
+      border-radius: 50%;
+    }
+    .eco-orbit-outer {
+      width: 520px; height: 520px;
+      margin-left: -260px; margin-top: -260px;
+      border-color: rgba(184,147,90,0.05);
+    }
+    /* Stakeholder nodes */
+    .eco-node {
+      position: absolute;
+      width: 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+    }
+    .eco-node-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.35s;
+      animation: nodeFloat 5s ease-in-out infinite;
+    }
+    .eco-node:nth-child(odd) .eco-node-icon { animation-delay: -2.5s; }
+    .eco-node-icon:hover {
+      border-color: var(--gold3);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      transform: scale(1.08);
+    }
+    .eco-node-label {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--text2);
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+    }
+    /* Node positions (6 nodes in hexagonal layout around center) */
+    .eco-node-1 { top: 12%;  left: 50%; }   /* top */
+    .eco-node-2 { top: 30%;  left: 84%; }   /* top-right */
+    .eco-node-3 { top: 70%;  left: 84%; }   /* bottom-right */
+    .eco-node-4 { top: 88%;  left: 50%; }   /* bottom */
+    .eco-node-5 { top: 70%;  left: 16%; }   /* bottom-left */
+    .eco-node-6 { top: 30%;  left: 16%; }   /* top-left */
+
+    /* Flow labels on edges */
+    .eco-flow {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold3);
+      background: var(--bg2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      z-index: 6;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .ecosystem-diagram:hover .eco-flow { opacity: 1; }
+
+    [data-theme="light"] .ecosystem-section { background: #DCFCE7; }
+    [data-theme="light"] .ecosystem-section::before {
+      background-image:
+        linear-gradient(rgba(22,163,74,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(22,163,74,0.04) 1px, transparent 1px);
+    }
+    [data-theme="light"] .eco-center {
+      background: linear-gradient(135deg, #FFFFFF, #F0F6FF);
+      border-color: #16A34A;
+      box-shadow: 0 0 40px rgba(22,163,74,0.12), 0 4px 24px rgba(22,163,74,0.06);
+    }
+    [data-theme="light"] .eco-center-label { color: #16A34A; }
+    [data-theme="light"] .eco-node-icon { background: #FFFFFF; border-color: rgba(22,163,74,0.12); }
+    [data-theme="light"] .eco-orbit { border-color: rgba(22,163,74,0.14); }
+    [data-theme="light"] .eco-flow { background: #DCFCE7; color: #16A34A; }
+
+    @media (max-width: 640px) {
+      .ecosystem-diagram { width: 340px; height: 340px; }
+      .eco-orbit { width: 220px; height: 220px; margin-left: -110px; margin-top: -110px; }
+      .eco-orbit-outer { width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; }
+      .eco-center { width: 90px; height: 90px; border-radius: 14px; }
+      .eco-center-label { font-size: 13px; }
+      .eco-node-icon { width: 44px; height: 44px; border-radius: 10px; }
+      .eco-node { width: 60px; }
+      .eco-node-label { font-size: 8px; }
+    }
+
+    /* ═══════════════════════════════════════════
+       IMPROVED SECTION COLORS
+    ═══════════════════════════════════════════ */
+    .section-lead { color: var(--text2); }
+    .letter-para  { color: var(--text2); }
+    .traction-desc { color: var(--text2); }
+    .bevi-card-desc { color: var(--text2); }
+    .bevi-card-sub { color: var(--text3); }
+    .hero-meta-item { color: var(--text3); }
+    .traction-label { color: var(--text3); }
+    .hero-addressee-title { color: var(--text2); }
+    .alignment-panel-text { font-size: 14px; font-weight: 500; color: var(--text2); line-height: 1.75; }
+    .synergy-content-desc { color: var(--text2); }
+    .signoff-contact-item { color: var(--text2); }
+    .roadmap-card.future  { opacity: 0.85; }
+    .roadmap-card.soon    { opacity: 0.92; }
+    .roadmap-milestones li { color: var(--text2); }
+
+    /* ═══════════════════════════════════════════
+       FADE-UP ANIMATIONS
+    ═══════════════════════════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1),
+                  transform 0.65s cubic-bezier(0.16,1,0.3,1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.d1 { transition-delay: 0.08s; }
+    .fade-up.d2 { transition-delay: 0.16s; }
+    .fade-up.d3 { transition-delay: 0.24s; }
+    .fade-up.d4 { transition-delay: 0.32s; }
+    .fade-up.d5 { transition-delay: 0.40s; }
+
+    /* ═══════════════════════════════════════════
+       TIMELINE LAUNCH BLOCK
+    ═══════════════════════════════════════════ */
+    .timeline {
+      display: flex;
+      gap: 0;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 24px; right: 24px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--gold), var(--blue));
+      z-index: 0;
+    }
+    .timeline-step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-dot {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      margin-bottom: 16px;
+      border: 2px solid transparent;
+      background: var(--bg3);
+      transition: all 0.3s;
+    }
+    .timeline-step.done .timeline-dot {
+      background: var(--green2);
+      border-color: var(--green);
+    }
+    .timeline-step.active .timeline-dot {
+      background: rgba(184,147,90,0.2);
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(184,147,90,0.3);
+    }
+    .timeline-step.upcoming .timeline-dot {
+      background: rgba(22,163,74,0.1);
+      border-color: var(--blue);
+    }
+    .timeline-label {
+      font-size: 11px;
+      font-weight: 800;
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .timeline-sub {
+      font-size: 10px;
+      color: var(--text3);
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════════
+       QUOTE BLOCK
+    ═══════════════════════════════════════════ */
+    .quote-block {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 28px 32px;
+      margin: 32px 0;
+      position: relative;
+    }
+    .quote-block::before {
+      content: '"';
+      position: absolute;
+      top: -10px; left: 20px;
+      font-size: 64px;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .quote-text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .traction-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .traction-card:first-child { border-radius: var(--radius) 0 0 0; }
+      .traction-card:last-child  { border-radius: 0 0 var(--radius) 0; }
+      .traction-card:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
+      .traction-card:nth-child(3) { border-radius: 0 0 0 var(--radius); }
+
+      .bevi-grid { grid-template-columns: 1fr; }
+
+      .alignment-split { grid-template-columns: 1fr; }
+      .alignment-arrow { display: none; }
+
+      .letter-body { padding: 28px 24px; }
+
+      .timeline::before { display: none; }
+      .timeline { flex-direction: column; gap: 16px; align-items: flex-start; padding-left: 24px; }
+      .timeline::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 51px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--green), var(--gold), var(--blue));
+      }
+      .timeline-step { flex-direction: row; align-items: flex-start; gap: 16px; width: 100%; }
+      .timeline-dot { margin-bottom: 0; flex-shrink: 0; }
+      .timeline-label, .timeline-sub { text-align: left; }
+
+      .nav-badge { display: none; }
+      .signoff { min-width: unset; width: 100%; }
+
+      .letter-problem-solution { grid-template-columns: 1fr; }
+      .letter-stats { grid-template-columns: 1fr; }
+      .letter-2col { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .traction-grid { grid-template-columns: 1fr 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ NAVIGATION ═══════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="https://benevsky.work/" target="_blank" rel="noopener" class="nav-logo">
+        <span class="nav-logo-main">
+          <span class="nav-logo-dot"></span>CASE
+        </span>
+        <span class="nav-logo-sub">Central Asia Startup Ecosystem</span>
+      </a>
+      <div class="nav-right">
+        <span class="nav-badge">
+          <span data-lang-ru>Официальное Обращение</span>
+          <span data-lang-en>Official Appeal</span>
+          <span data-lang-kz>Ресми Өтініш</span>
+        </span>
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <button class="lang-btn" data-lang-target="kz">KZ</button>
+          <button class="lang-btn active" data-lang-target="ru">RU</button>
+          <button class="lang-btn" data-lang-target="en">EN</button>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle light/dark theme">
+          <!-- Moon icon: shown in dark mode (click to go light) -->
+          <span class="icon-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+          <!-- Sun icon: shown in light mode (click to go dark) -->
+          <span class="icon-dark">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold)"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero">
+    <div class="hero-scanline"></div>
+    <!-- floating particles -->
+    <div class="hero-particles" aria-hidden="true">
+      <span style="--dur:9s;  --delay:0s;   top:15%; left:8%;"></span>
+      <span style="--dur:12s; --delay:2s;   top:30%; left:78%;"></span>
+      <span style="--dur:7s;  --delay:1.5s; top:65%; left:22%;"></span>
+      <span style="--dur:11s; --delay:3s;   top:50%; left:88%;"></span>
+      <span style="--dur:8s;  --delay:0.5s; top:80%; left:55%;"></span>
+      <span style="--dur:14s; --delay:4s;   top:20%; left:45%;"></span>
+      <span style="--dur:10s; --delay:2.5s; top:70%; left:12%;"></span>
+    </div>
+    <div class="container">
+
+      <div class="fade-up">
+        <div class="hero-label">
+          <span class="hero-label-dot"></span>
+          <span data-lang-ru>B2G · Стратегическое Предложение · 19 марта 2026</span>
+          <span data-lang-en>B2G · Strategic Proposal · March 19, 2026</span>
+          <span data-lang-kz>B2G · Стратегиялық Ұсыныс · 19 наурыз 2026</span>
+        </div>
+      </div>
+
+      <h1 class="fade-up d1">
+        <span class="hero-gradient-text">
+          <span data-lang-ru>Стратегический диалог:<br>CASE Ecosystem как рыночный инструмент<br>национальной AI-инфраструктуры</span>
+          <span data-lang-en>Strategic Dialogue:<br>CASE Ecosystem as the Market Engine<br>for National AI Infrastructure</span>
+          <span data-lang-kz>Стратегиялық диалог:<br>CASE Ecosystem — ұлттық<br>AI-инфрақұрылымының нарық құралы</span>
+        </span>
+      </h1>
+
+      <div class="hero-addressee fade-up d2">
+        <div class="hero-addressee-icon" style="font-size:0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <div class="hero-addressee-label">
+            <span data-lang-ru>Адресат</span>
+            <span data-lang-en>Addressed to</span>
+            <span data-lang-kz>Алушы</span>
+          </div>
+          <div class="hero-addressee-name">Мун Дмитрий Андреевич</div>
+          <div class="hero-addressee-title">
+            <span data-lang-ru>Вице-министр искусственного интеллекта<br>и цифрового развития Республики Казахстан</span>
+            <span data-lang-en>Vice-Minister of Artificial Intelligence<br>and Digital Development of the Republic of Kazakhstan</span>
+            <span data-lang-kz>Қазақстан Республикасы Жасанды интеллект<br>және цифрлық даму вице-министрі</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-meta fade-up d3">
+        <div class="hero-meta-item">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span data-lang-ru>19 марта 2026 г.</span>
+          <span data-lang-en>March 19, 2026</span>
+          <span data-lang-kz>2026 жылғы 19 наурыз</span>
+        </div>
+        <div class="hero-meta-item">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-4.418 0-8-3.582-8-8 0-3.314 2-6.5 5-8l1 3c.5-1.5 2-3 4-3s3.5 1.5 4 3l1-3c3 1.5 5 4.686 5 8 0 4.418-3.582 8-8 8z"/></svg>
+          <span>Astana, Kazakhstan</span>
+        </div>
+        <div class="hero-meta-item">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
+          <span data-lang-ru>Запуск Q2 2026</span>
+          <span data-lang-en>Launch Q2 2026</span>
+          <span data-lang-kz>Q2 2026 іске қосу</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ TRACTION STRIP ═══════ -->
+  <div class="traction">
+    <div class="container">
+      <div class="traction-label fade-up">
+        <span data-lang-ru>Текущие показатели платформы</span>
+        <span data-lang-en>Platform Current Traction</span>
+        <span data-lang-kz>Платформаның ағымдағы көрсеткіштері</span>
+      </div>
+      <div class="traction-grid">
+        <div class="traction-card fade-up d1">
+          <div class="traction-card-accent"></div>
+          <div class="traction-number">15+</div>
+          <div class="traction-desc">
+            <span data-lang-ru>Стартапов-резидентов<br>на стадиях Seed и выше</span>
+            <span data-lang-en>Resident startups<br>at Seed stage and above</span>
+            <span data-lang-kz>Тұрғын стартаптар<br>Seed кезеңінде және жоғарыда</span>
+          </div>
+        </div>
+        <div class="traction-card fade-up d2">
+          <div class="traction-card-accent"></div>
+          <div class="traction-number">20+</div>
+          <div class="traction-desc">
+            <span data-lang-ru>Команд<br>в листе ожидания</span>
+            <span data-lang-en>Teams<br>on the waitlist</span>
+            <span data-lang-kz>Команда<br>күту тізімінде</span>
+          </div>
+        </div>
+        <div class="traction-card fade-up d3">
+          <div class="traction-card-accent"></div>
+          <div class="traction-number">12+</div>
+          <div class="traction-desc">
+            <span data-lang-ru>Институциональных<br>партнёров</span>
+            <span data-lang-en>Institutional<br>partners</span>
+            <span data-lang-kz>Институционалдық<br>серіктестер</span>
+          </div>
+        </div>
+        <div class="traction-card fade-up d4">
+          <div class="traction-card-accent"></div>
+          <div class="traction-number">40+</div>
+          <div class="traction-desc">
+            <span data-lang-ru>Метрик оценки<br>AI-скоринга CASEM</span>
+            <span data-lang-en>CASEM AI-scoring<br>evaluation metrics</span>
+            <span data-lang-kz>CASEM AI-скорингтің<br>бағалау метрикалары</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ LETTER BODY ═══════ -->
+  <section>
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span data-lang-ru>Официальное Обращение</span>
+        <span data-lang-en>Official Appeal</span>
+        <span data-lang-kz>Ресми Өтініш</span>
+      </div>
+      <h2 class="section-h2 fade-up d1">
+        <span data-lang-ru>Уважаемый Дмитрий Андреевич</span>
+        <span data-lang-en>Dear Dmitry Andreyevich</span>
+        <span data-lang-kz>Құрметті Дмитрий Андреевич</span>
+      </h2>
+
+      <div class="letter-body fade-up d2">
+
+        <!-- ── Intro paragraph (all langs) ── -->
+        <div data-lang-ru>
+          <p class="letter-para">
+            Меня зовут <strong>Савва Беневский</strong> — основатель экосистемы <strong>Benevsky IT Hub</strong>, член Совета IT-ассоциации Казахстана (ИТК). По образованию — <span class="letter-highlight">магистр E-Business &amp; Digital Innovations (ВШЭ)</span>, обладатель научной степени в области <span class="letter-highlight">CyberSecurity &amp; Data Processing (МИРЭА)</span>, докторант Satbayev University (AI-скоринг стартапов). В IT с 2012 года, в запуске продуктов и стартапов — с 2016-го.
+          </p>
+        </div>
+        <div data-lang-en>
+          <p class="letter-para">
+            My name is <strong>Savva Benevsky</strong> — founder of <strong>Benevsky IT Hub</strong>, member of the Kazakhstan IT Association (ITK) Council. I hold a <span class="letter-highlight">Master's in E-Business &amp; Digital Innovations (HSE)</span>, a research degree in <span class="letter-highlight">CyberSecurity &amp; Data Processing (MIREA)</span>, and am a PhD candidate at Satbayev University (AI-scoring of startups). In IT since 2012, launching products and startups since 2016.
+          </p>
+        </div>
+        <div data-lang-kz>
+          <p class="letter-para">
+            Менің атым <strong>Савва Беневский</strong> — <strong>Benevsky IT Hub</strong> экожүйесінің негізін қалаушы, Қазақстан IT қауымдастығы (ИТК) кеңесінің мүшесі. <span class="letter-highlight">E-Business &amp; Digital Innovations магистрі (ЖЭМ)</span>, <span class="letter-highlight">CyberSecurity &amp; Data Processing (МИРЭА)</span> ғылыми дәрежесінің иесі, Satbayev University докторанты (AI-скоринг). 2012 жылдан IT-да, 2016 жылдан стартаптар іске қосуда.
+          </p>
+        </div>
+
+        <!-- ── Live platform stats strip ── -->
+        <div class="letter-stats">
+          <div class="letter-stat">
+            <div class="letter-stat-num">15+</div>
+            <div class="letter-stat-label">
+              <span data-lang-ru>Стартапов-резидентов (Seed+)</span>
+              <span data-lang-en>Resident startups (Seed+)</span>
+              <span data-lang-kz>Тұрғын стартаптар (Seed+)</span>
+            </div>
+          </div>
+          <div class="letter-stat">
+            <div class="letter-stat-num">12+</div>
+            <div class="letter-stat-label">
+              <span data-lang-ru>Институциональных партнёров</span>
+              <span data-lang-en>Institutional partners</span>
+              <span data-lang-kz>Институционалдық серіктестер</span>
+            </div>
+          </div>
+          <div class="letter-stat">
+            <div class="letter-stat-num">40+</div>
+            <div class="letter-stat-label">
+              <span data-lang-ru>Метрик AI-скоринга CASEM</span>
+              <span data-lang-en>CASEM AI-scoring metrics</span>
+              <span data-lang-kz>CASEM AI-скоринг метрикалары</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Problem / Solution split ── -->
+        <div class="letter-problem-solution">
+          <div class="lps-panel">
+            <div class="lps-label" style="color:var(--silver);">
+              <span class="lps-dot" style="background:var(--silver);"></span>
+              <span data-lang-ru>Проблема рынка</span>
+              <span data-lang-en>Market Problem</span>
+              <span data-lang-kz>Нарық мәселесі</span>
+            </div>
+            <div class="lps-text">
+              <span data-lang-ru>Рынок венчурных инвестиций ЦА <strong>фрагментирован</strong>: высокая субъективность оценок, отсутствие прозрачной инфраструктуры для сделок, недоступность для международного капитала.</span>
+              <span data-lang-en>The CA venture market is <strong>fragmented</strong>: high subjectivity in valuations, no transparent deal infrastructure, inaccessible to international capital.</span>
+              <span data-lang-kz>ОА венчурлық нарығы <strong>бөлшектелген</strong>: бағалаулардың жоғары субъективтілігі, мөлдір инфрақұрылымның жоқтығы, халықаралық капиталға қолжетімсіздік.</span>
+            </div>
+          </div>
+          <div class="lps-panel" style="border-left: 2px solid var(--gold);">
+            <div class="lps-label" style="color:var(--gold);">
+              <span class="lps-dot" style="background:var(--gold);"></span>
+              <span data-lang-ru>Решение CASE</span>
+              <span data-lang-en>CASE Solution</span>
+              <span data-lang-kz>CASE шешімі</span>
+            </div>
+            <div class="lps-text">
+              <span data-lang-ru>Единая цифровая платформа с <strong>AI-скорингом CASEM</strong> объединяет стартапы, инвесторов, университеты и государство — делая рынок <strong>прозрачным и измеримым</strong>.</span>
+              <span data-lang-en>A unified digital platform with <strong>CASEM AI-scoring</strong> unites startups, investors, universities, and government — making the market <strong>transparent and measurable</strong>.</span>
+              <span data-lang-kz>CASE <strong>CASEM AI-скоринг</strong> платформасы стартаптарды, инвесторларды, университеттер мен мемлекетті біріктіреді — нарықты <strong>мөлдір және өлшенетін</strong> етеді.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Strategic alignment quote ── -->
+        <div class="quote-block" style="margin-bottom: 0;">
+          <p class="quote-text">
+            <span data-lang-ru>Причина обращения — <strong style="color:var(--gold)">стратегическое совпадение задач</strong>. Министерство формирует сквозную AI-инфраструктуру страны. CASE делает венчурную экосистему Казахстана <strong>прозрачной, измеримой и привлекательной для международного капитала</strong>.</span>
+            <span data-lang-en>The reason for this appeal is a <strong style="color:var(--gold)">strategic alignment of objectives</strong>. The Ministry builds the nation's AI infrastructure. CASE makes Kazakhstan's venture ecosystem <strong>transparent, measurable, and attractive to international capital</strong>.</span>
+            <span data-lang-kz>Өтініштің себебі — <strong style="color:var(--gold)">міндеттердің стратегиялық сәйкестігі</strong>. Министрлік ұлттық AI-инфрақұрылымын қалыптастырады. CASE венчурлық экожүйені <strong>мөлдір, өлшенетін және халықаралық капитал үшін тартымды</strong> етеді.</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ ECOSYSTEM DIAGRAM ═══════ -->
+  <div class="ecosystem-section">
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span data-lang-ru>Архитектура Экосистемы</span>
+        <span data-lang-en>Ecosystem Architecture</span>
+        <span data-lang-kz>Экожүйе Архитектурасы</span>
+      </div>
+      <h2 class="section-h2 fade-up d1">
+        <span data-lang-ru>Объединение разрозненных игроков<br>в единую измеримую систему</span>
+        <span data-lang-en>Uniting Disparate Players<br>into One Measurable System</span>
+        <span data-lang-kz>Бөлек ойыншыларды бір өлшенетін<br>жүйеге біріктіру</span>
+      </h2>
+      <p class="section-lead fade-up d2">
+        <span data-lang-ru>Сегодня стартапы, инвесторы, университеты, акселераторы, государство и эксперты работают изолированно. CASE создаёт единую точку входа с AI-скорингом и прозрачной аналитикой.</span>
+        <span data-lang-en>Today startups, investors, universities, accelerators, government and experts operate in silos. CASE creates a single entry point with AI-scoring and transparent analytics.</span>
+        <span data-lang-kz>Бүгін стартаптар, инвесторлар, университеттер, акселераторлар, мемлекет пен сарапшылар оқшауланған жұмыс істейді. CASE AI-скоринг пен мөлдір аналитикамен бірыңғай кіру нүктесін жасайды.</span>
+      </p>
+
+      <div class="ecosystem-diagram fade-up d3">
+        <!-- SVG connection lines from center to each node -->
+        <div class="ecosystem-svg-wrap">
+          <svg width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+            <defs>
+              <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:rgba(184,147,90,0.5)"/>
+                <stop offset="100%" style="stop-color:rgba(22,163,74,0.3)"/>
+              </linearGradient>
+              <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgba(184,147,90,0.5)"/>
+                <stop offset="100%" style="stop-color:rgba(46,138,110,0.3)"/>
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Lines from center (300,300) to each node -->
+            <!-- Node 1: top   (300, 72) -->
+            <line x1="300" y1="230" x2="300" y2="100" stroke="url(#lineGrad1)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" filter="url(#glow)">
+              <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <!-- Node 2: top-right (504, 180) -->
+            <line x1="370" y1="255" x2="490" y2="175" stroke="url(#lineGrad1)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" filter="url(#glow)">
+              <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.3s" repeatCount="indefinite"/>
+            </line>
+            <!-- Node 3: bottom-right (504, 420) -->
+            <line x1="370" y1="345" x2="490" y2="425" stroke="url(#lineGrad2)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" filter="url(#glow)">
+              <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.1s" repeatCount="indefinite"/>
+            </line>
+            <!-- Node 4: bottom (300, 528) -->
+            <line x1="300" y1="370" x2="300" y2="502" stroke="url(#lineGrad2)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" filter="url(#glow)">
+              <animate attributeName="stroke-dashoffset" from="50" to="0" dur="1.9s" repeatCount="indefinite"/>
+            </line>
+            <!-- Node 5: bottom-left (96, 420) -->
+            <line x1="230" y1="345" x2="110" y2="425" stroke="url(#lineGrad2)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" filter="url(#glow)">
+              <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.4s" repeatCount="indefinite"/>
+            </line>
+            <!-- Node 6: top-left (96, 180) -->
+            <line x1="230" y1="255" x2="110" y2="175" stroke="url(#lineGrad1)" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6" filter="url(#glow)">
+              <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.2s" repeatCount="indefinite"/>
+            </line>
+          </svg>
+        </div>
+
+        <!-- Orbit rings -->
+        <div class="eco-orbit"></div>
+        <div class="eco-orbit eco-orbit-outer"></div>
+
+        <!-- Center node: CASE platform -->
+        <div class="eco-center">
+          <div class="eco-center-label">CASE</div>
+          <div class="eco-center-sub">
+            <span data-lang-ru>Единая<br>платформа</span>
+            <span data-lang-en>Unified<br>Platform</span>
+            <span data-lang-kz>Бірыңғай<br>платформа</span>
+          </div>
+        </div>
+
+        <!-- Node 1: Startups — top -->
+        <div class="eco-node eco-node-1">
+          <div class="eco-node-icon" style="border-color:rgba(184,147,90,0.3);background:linear-gradient(135deg,var(--bg3),var(--bg4));">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="eco-node-label">
+            <span data-lang-ru>Стартапы</span>
+            <span data-lang-en>Startups</span>
+            <span data-lang-kz>Стартаптар</span>
+          </div>
+        </div>
+
+        <!-- Node 2: Investors — top-right -->
+        <div class="eco-node eco-node-2">
+          <div class="eco-node-icon" style="border-color:rgba(22,163,74,0.3);background:linear-gradient(135deg,var(--bg3),var(--bg4));">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="eco-node-label">
+            <span data-lang-ru>Инвесторы</span>
+            <span data-lang-en>Investors</span>
+            <span data-lang-kz>Инвесторлар</span>
+          </div>
+        </div>
+
+        <!-- Node 3: Government — bottom-right -->
+        <div class="eco-node eco-node-3">
+          <div class="eco-node-icon" style="border-color:rgba(46,138,110,0.3);background:linear-gradient(135deg,var(--bg3),var(--bg4));">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="eco-node-label">
+            <span data-lang-ru>Государство</span>
+            <span data-lang-en>Government</span>
+            <span data-lang-kz>Мемлекет</span>
+          </div>
+        </div>
+
+        <!-- Node 4: Accelerators — bottom -->
+        <div class="eco-node eco-node-4">
+          <div class="eco-node-icon" style="border-color:rgba(184,147,90,0.25);background:linear-gradient(135deg,var(--bg3),var(--bg4));">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="eco-node-label">
+            <span data-lang-ru>Акселераторы</span>
+            <span data-lang-en>Accelerators</span>
+            <span data-lang-kz>Акселераторлар</span>
+          </div>
+        </div>
+
+        <!-- Node 5: Universities — bottom-left -->
+        <div class="eco-node eco-node-5">
+          <div class="eco-node-icon" style="border-color:rgba(122,138,158,0.3);background:linear-gradient(135deg,var(--bg3),var(--bg4));">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="eco-node-label">
+            <span data-lang-ru>Университеты</span>
+            <span data-lang-en>Universities</span>
+            <span data-lang-kz>Университеттер</span>
+          </div>
+        </div>
+
+        <!-- Node 6: Experts — top-left -->
+        <div class="eco-node eco-node-6">
+          <div class="eco-node-icon" style="border-color:rgba(22,163,74,0.25);background:linear-gradient(135deg,var(--bg3),var(--bg4));">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="eco-node-label">
+            <span data-lang-ru>Эксперты</span>
+            <span data-lang-en>Experts</span>
+            <span data-lang-kz>Сарапшылар</span>
+          </div>
+        </div>
+
+        <!-- Edge flow labels (visible on hover) -->
+        <div class="eco-flow" style="top:20%;left:50%;">
+          <span data-lang-ru>AI-скоринг</span>
+          <span data-lang-en>AI scoring</span>
+          <span data-lang-kz>AI-скоринг</span>
+        </div>
+        <div class="eco-flow" style="top:42%;left:75%;">
+          <span data-lang-ru>Матчинг</span>
+          <span data-lang-en>Matching</span>
+          <span data-lang-kz>Матчинг</span>
+        </div>
+        <div class="eco-flow" style="top:58%;left:75%;">
+          <span data-lang-ru>Аналитика</span>
+          <span data-lang-en>Analytics</span>
+          <span data-lang-kz>Аналитика</span>
+        </div>
+        <div class="eco-flow" style="top:80%;left:50%;">
+          <span data-lang-ru>Программы</span>
+          <span data-lang-en>Programs</span>
+          <span data-lang-kz>Бағдарламалар</span>
+        </div>
+        <div class="eco-flow" style="top:58%;left:25%;">
+          <span data-lang-ru>Исследования</span>
+          <span data-lang-en>Research</span>
+          <span data-lang-kz>Зерттеулер</span>
+        </div>
+        <div class="eco-flow" style="top:42%;left:25%;">
+          <span data-lang-ru>Менторинг</span>
+          <span data-lang-en>Mentoring</span>
+          <span data-lang-kz>Менторинг</span>
+        </div>
+      </div>
+
+      <!-- Bottom legend: before / after -->
+      <div class="fade-up d4" style="display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin-top:48px;max-width:640px;margin-left:auto;margin-right:auto;">
+        <div style="padding:20px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);text-align:center;">
+          <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;">
+            <span data-lang-ru>Сейчас</span>
+            <span data-lang-en>Today</span>
+            <span data-lang-kz>Қазір</span>
+          </div>
+          <div style="font-size:13px;font-weight:800;color:var(--text);">
+            <span data-lang-ru>Разрозненные<br>изолированные игроки</span>
+            <span data-lang-en>Fragmented<br>isolated players</span>
+            <span data-lang-kz>Бөлек оқшауланған<br>ойыншылар</span>
+          </div>
+          <div style="margin-top:8px;font-size:11px;color:var(--text3);">
+            <span data-lang-ru>нет единой аналитики</span>
+            <span data-lang-en>no unified analytics</span>
+            <span data-lang-kz>бірыңғай аналитика жоқ</span>
+          </div>
+        </div>
+        <div style="font-size:22px;color:var(--gold);font-weight:800;">→</div>
+        <div style="padding:20px;background:linear-gradient(135deg,rgba(184,147,90,0.08),rgba(22,163,74,0.05));border:1px solid var(--gold3);border-radius:var(--radius);text-align:center;">
+          <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">CASE</div>
+          <div style="font-size:13px;font-weight:800;color:var(--text);">
+            <span data-lang-ru>Единая экосистема<br>с AI-аналитикой</span>
+            <span data-lang-en>Unified ecosystem<br>with AI analytics</span>
+            <span data-lang-kz>AI аналитикасымен<br>бірыңғай экожүйе</span>
+          </div>
+          <div style="margin-top:8px;font-size:11px;color:var(--gold);">40+ метрик · AI scoring</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ CASEM METHODOLOGY ═══════ -->
+  <section style="background: var(--bg2);">
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span data-lang-ru>Ключевая технология</span>
+        <span data-lang-en>Core Technology</span>
+        <span data-lang-kz>Негізгі технология</span>
+      </div>
+      <h2 class="section-h2 fade-up d1">
+        <span data-lang-ru>AI-скоринг на базе методологии<br>CASEM — 5 категорий, 15 критериев</span>
+        <span data-lang-en>AI-Scoring Based on<br>CASEM — 5 Categories, 15 Criteria</span>
+        <span data-lang-kz>CASEM әдіснамасына негізделген<br>AI-скоринг — 5 санат, 15 критерий</span>
+      </h2>
+      <p class="section-lead fade-up d2">
+        <span data-lang-ru>Central Asia Startup Evaluation Methodology — академическая разработка на базе PhD-диссертации основателя, адаптированная под венчурный рынок ЦА. Единственная в регионе объективная система оценки стартапов, исключающая субъективность в сделках.</span>
+        <span data-lang-en>Central Asia Startup Evaluation Methodology — an academic framework based on the founder's PhD research, adapted for Central Asia's venture market. The only objective startup evaluation system in the region, eliminating subjectivity in deals.</span>
+        <span data-lang-kz>Central Asia Startup Evaluation Methodology — негізін қалаушының PhD зерттеуіне негізделген академиялық жасалым, ОА венчурлық нарығына бейімделген. Аймақтағы жалғыз объективті стартап бағалау жүйесі.</span>
+      </p>
+
+      <div class="casem-table fade-up d3">
+
+        <!-- 1. Стратегическая эффективность -->
+        <div class="casem-row">
+          <div class="casem-left">
+            <div class="casem-icon" style="background:rgba(184,147,90,0.15);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="casem-category">
+                <span data-lang-ru>Стратегическая эффективность</span>
+                <span data-lang-en>Strategic Performance</span>
+                <span data-lang-kz>Стратегиялық тиімділік</span>
+              </div>
+              <div class="casem-method">Balanced Scorecard</div>
+            </div>
+          </div>
+          <div class="casem-right">
+            <span class="casem-tag"><span data-lang-ru>Рост и трэкшн</span><span data-lang-en>Growth &amp; Traction</span><span data-lang-kz>Өсу және трэкшн</span></span>
+            <span class="casem-tag"><span data-lang-ru>Исполнение KPI</span><span data-lang-en>KPI Execution</span><span data-lang-kz>KPI орындалуы</span></span>
+            <span class="casem-tag"><span data-lang-ru>Масштабируемость</span><span data-lang-en>Scalability</span><span data-lang-kz>Масштабталуы</span></span>
+          </div>
+        </div>
+
+        <!-- 2. Организационно-процессная эффективность -->
+        <div class="casem-row">
+          <div class="casem-left">
+            <div class="casem-icon" style="background:rgba(22,163,74,0.12);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M3 12H1M23 12h-2M19.07 19.07l-1.41-1.41M5.34 5.34L3.93 3.93M12 1v2M12 21v2"/></svg>
+            </div>
+            <div>
+              <div class="casem-category">
+                <span data-lang-ru>Организационно-процессная эффективность</span>
+                <span data-lang-en>Organizational Process Efficiency</span>
+                <span data-lang-kz>Ұйымдық-процестік тиімділік</span>
+              </div>
+              <div class="casem-method">Lean Six Sigma + PMBOK</div>
+            </div>
+          </div>
+          <div class="casem-right">
+            <span class="casem-tag"><span data-lang-ru>Соблюдение сроков</span><span data-lang-en>Timeline Adherence</span><span data-lang-kz>Мерзімдерді сақтау</span></span>
+            <span class="casem-tag"><span data-lang-ru>Контроль бюджета</span><span data-lang-en>Budget Control</span><span data-lang-kz>Бюджет бақылауы</span></span>
+            <span class="casem-tag"><span data-lang-ru>Управление рисками</span><span data-lang-en>Risk Management</span><span data-lang-kz>Тәуекелдерді басқару</span></span>
+          </div>
+        </div>
+
+        <!-- 3. Финансово-экономическая эффективность -->
+        <div class="casem-row">
+          <div class="casem-left">
+            <div class="casem-icon" style="background:rgba(46,138,110,0.12);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <div class="casem-category">
+                <span data-lang-ru>Финансово-экономическая эффективность</span>
+                <span data-lang-en>Financial-Economic Performance</span>
+                <span data-lang-kz>Қаржылық-экономикалық тиімділік</span>
+              </div>
+              <div class="casem-method">Фин-метрики + Unit Economics</div>
+            </div>
+          </div>
+          <div class="casem-right">
+            <span class="casem-tag"><span data-lang-ru>Рентабельность и маржа</span><span data-lang-en>Profitability &amp; Margin</span><span data-lang-kz>Рентабелділік және маржа</span></span>
+            <span class="casem-tag"><span data-lang-ru>Юнит-экономика</span><span data-lang-en>Unit Economics</span><span data-lang-kz>Юнит-экономика</span></span>
+            <span class="casem-tag"><span data-lang-ru>Финансовая устойчивость</span><span data-lang-en>Financial Stability</span><span data-lang-kz>Қаржылық тұрақтылық</span></span>
+          </div>
+        </div>
+
+        <!-- 4. Человеческий и интеллектуальный капитал -->
+        <div class="casem-row">
+          <div class="casem-left">
+            <div class="casem-icon" style="background:rgba(122,138,158,0.12);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--silver)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="casem-category">
+                <span data-lang-ru>Человеческий и интеллектуальный капитал</span>
+                <span data-lang-en>Human &amp; Intellectual Capital</span>
+                <span data-lang-kz>Адами және интеллектуалдық капитал</span>
+              </div>
+              <div class="casem-method">HCM-модель + eNPS + Competency Framework</div>
+            </div>
+          </div>
+          <div class="casem-right">
+            <span class="casem-tag"><span data-lang-ru>Вовлечённость команды</span><span data-lang-en>Team Engagement</span><span data-lang-kz>Команда қатысуы</span></span>
+            <span class="casem-tag"><span data-lang-ru>Индекс доверия фаундеру</span><span data-lang-en>Founder Trust Index</span><span data-lang-kz>Фаундерге сенім индексі</span></span>
+            <span class="casem-tag"><span data-lang-ru>Влияние партнёров</span><span data-lang-en>Partner Influence</span><span data-lang-kz>Серіктестер ықпалы</span></span>
+          </div>
+        </div>
+
+        <!-- 5. Внешняя и социальная эффективность -->
+        <div class="casem-row">
+          <div class="casem-left">
+            <div class="casem-icon" style="background:rgba(46,138,110,0.10);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <div class="casem-category">
+                <span data-lang-ru>Внешняя и социальная эффективность</span>
+                <span data-lang-en>External &amp; Social Performance</span>
+                <span data-lang-kz>Сыртқы және әлеуметтік тиімділік</span>
+              </div>
+              <div class="casem-method">Market &amp; Social Metrics</div>
+            </div>
+          </div>
+          <div class="casem-right">
+            <span class="casem-tag"><span data-lang-ru>Лояльность клиентов</span><span data-lang-en>Customer Loyalty</span><span data-lang-kz>Клиенттер адалдығы</span></span>
+            <span class="casem-tag"><span data-lang-ru>Рыночная позиция</span><span data-lang-en>Market Position</span><span data-lang-kz>Нарықтық позиция</span></span>
+            <span class="casem-tag"><span data-lang-ru>ESG и конкурентное преимущество</span><span data-lang-en>ESG &amp; Competitive Edge</span><span data-lang-kz>ESG және бәсекелестік артықшылық</span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quarterly Roadmap 2025–2028 -->
+      <div class="section-tag fade-up" style="margin-top: 56px;">
+        <span data-lang-ru>Роадмап платформы · 2025 — 2028</span>
+        <span data-lang-en>Platform Roadmap · 2025 — 2028</span>
+        <span data-lang-kz>Платформа жол картасы · 2025 — 2028</span>
+      </div>
+
+      <div class="roadmap-grid">
+
+        <!-- Q1 2025 — DONE -->
+        <div class="roadmap-card done fade-up d1">
+          <div class="roadmap-card-header">
+            <span class="roadmap-quarter">Q1–Q4 2025</span>
+            <span class="roadmap-status-badge">
+              <span data-lang-ru>Завершено ✓</span>
+              <span data-lang-en>Completed ✓</span>
+              <span data-lang-kz>Аяқталды ✓</span>
+            </span>
+          </div>
+          <div class="roadmap-title">
+            <span data-lang-ru>Старт разработки &amp; исследование</span>
+            <span data-lang-en>Development Start &amp; Research</span>
+            <span data-lang-kz>Әзірлеу басталды &amp; зерттеу</span>
+          </div>
+          <ul class="roadmap-milestones">
+            <li data-lang-ru><strong>PhD-алгоритмы CASEM</strong> — методология AI-скоринга по 40+ метрикам</li>
+            <li data-lang-en><strong>CASEM PhD algorithms</strong> — AI-scoring methodology across 40+ metrics</li>
+            <li data-lang-kz><strong>CASEM PhD алгоритмдері</strong> — 40+ метрика бойынша AI-скоринг әдіснамасы</li>
+            <li data-lang-ru>Формирование <strong>команды и технической архитектуры</strong></li>
+            <li data-lang-en>Formation of <strong>core team and technical architecture</strong></li>
+            <li data-lang-kz><strong>Команда мен техникалық сәулет</strong> қалыптасты</li>
+            <li data-lang-ru>Подписаны первые <strong>партнёрские соглашения</strong></li>
+            <li data-lang-en>First <strong>partnership agreements</strong> signed</li>
+            <li data-lang-kz>Алғашқы <strong>серіктестік келісімдер</strong> жасалды</li>
+          </ul>
+        </div>
+
+        <!-- Q2 2026 — ACTIVE / LAUNCH -->
+        <div class="roadmap-card active fade-up d2">
+          <div class="roadmap-card-header">
+            <span class="roadmap-quarter">Q2 2026 — LAUNCH</span>
+            <span class="roadmap-status-badge">
+              <span data-lang-ru>Запуск сейчас</span>
+              <span data-lang-en>Launching now</span>
+              <span data-lang-kz>Қазір іске қосылуда</span>
+            </span>
+          </div>
+          <div class="roadmap-title">
+            <span data-lang-ru>Публичный запуск CASE Ecosystem</span>
+            <span data-lang-en>CASE Ecosystem Public Launch</span>
+            <span data-lang-kz>CASE Ecosystem ашық іске қосылуы</span>
+          </div>
+          <ul class="roadmap-milestones">
+            <li data-lang-ru><strong>50+ стартапов</strong> на платформе, 30+ верифицированных инвесторов</li>
+            <li data-lang-en><strong>50+ startups</strong> on platform, 30+ verified investors</li>
+            <li data-lang-kz>Платформада <strong>50+ стартап</strong>, 30+ тексерілген инвестор</li>
+            <li data-lang-ru><strong>Первые сделки</strong> через AI-скоринг CASEM</li>
+            <li data-lang-en><strong>First deals</strong> closed via CASEM AI-scoring</li>
+            <li data-lang-kz>CASEM AI-скоринг арқылы <strong>алғашқы мәмілелер</strong></li>
+            <li data-lang-ru>Открытый <strong>API для институциональных партнёров</strong></li>
+            <li data-lang-en>Open <strong>API for institutional partners</strong></li>
+            <li data-lang-kz>Институционалдық серіктестер үшін <strong>ашық API</strong></li>
+          </ul>
+        </div>
+
+        <!-- Q3–Q4 2026 — SOON -->
+        <div class="roadmap-card soon fade-up d3">
+          <div class="roadmap-card-header">
+            <span class="roadmap-quarter">Q3–Q4 2026</span>
+            <span class="roadmap-status-badge">
+              <span data-lang-ru>Масштабирование</span>
+              <span data-lang-en>Scaling</span>
+              <span data-lang-kz>Масштабтау</span>
+            </span>
+          </div>
+          <div class="roadmap-title">
+            <span data-lang-ru>Рост платформы &amp; первое финансирование</span>
+            <span data-lang-en>Platform Growth &amp; First Financing</span>
+            <span data-lang-kz>Платформа өсуі &amp; алғашқы қаржыландыру</span>
+          </div>
+          <ul class="roadmap-milestones">
+            <li data-lang-ru><strong>150+ стартапов</strong>, 50+ активных инвесторов</li>
+            <li data-lang-en><strong>150+ startups</strong>, 50+ active investors</li>
+            <li data-lang-kz><strong>150+ стартап</strong>, 50+ белсенді инвестор</li>
+            <li data-lang-ru><strong>$10M+</strong> привлечённого финансирования через CASE</li>
+            <li data-lang-en><strong>$10M+</strong> funding raised through CASE</li>
+            <li data-lang-kz>CASE арқылы <strong>$10M+</strong> қаражат тартылды</li>
+            <li data-lang-ru>Интеграция аналитики с <strong>государственными реестрами</strong></li>
+            <li data-lang-en>Analytics integration with <strong>state registries</strong></li>
+            <li data-lang-kz><strong>Мемлекеттік тіркелімдермен</strong> аналитика интеграциясы</li>
+          </ul>
+        </div>
+
+        <!-- Q1–Q2 2027 — SOON -->
+        <div class="roadmap-card soon fade-up d4">
+          <div class="roadmap-card-header">
+            <span class="roadmap-quarter">Q1–Q2 2027</span>
+            <span class="roadmap-status-badge">
+              <span data-lang-ru>Региональный выход</span>
+              <span data-lang-en>Regional Expansion</span>
+              <span data-lang-kz>Аймақтық шығу</span>
+            </span>
+          </div>
+          <div class="roadmap-title">
+            <span data-lang-ru>Экспансия в Центральную Азию</span>
+            <span data-lang-en>Central Asia Expansion</span>
+            <span data-lang-kz>Орталық Азияға экспансия</span>
+          </div>
+          <ul class="roadmap-milestones">
+            <li data-lang-ru>Запуск в <strong>Узбекистане и Кыргызстане</strong></li>
+            <li data-lang-en>Launch in <strong>Uzbekistan and Kyrgyzstan</strong></li>
+            <li data-lang-kz><strong>Өзбекстан және Қырғызстанда</strong> іске қосылу</li>
+            <li data-lang-ru><strong>300+ стартапов</strong> в экосистеме ЦА</li>
+            <li data-lang-en><strong>300+ startups</strong> in the CA ecosystem</li>
+            <li data-lang-kz>ОА экожүйесінде <strong>300+ стартап</strong></li>
+            <li data-lang-ru>Первые <strong>международные венчурные фонды</strong> на платформе</li>
+            <li data-lang-en>First <strong>international VC funds</strong> on the platform</li>
+            <li data-lang-kz>Платформада алғашқы <strong>халықаралық венчурлық қорлар</strong></li>
+          </ul>
+        </div>
+
+        <!-- Q3 2027 — FUTURE -->
+        <div class="roadmap-card future fade-up d1">
+          <div class="roadmap-card-header">
+            <span class="roadmap-quarter">Q3 2027</span>
+            <span class="roadmap-status-badge">
+              <span data-lang-ru>Гос. интеграция</span>
+              <span data-lang-en>Gov. Integration</span>
+              <span data-lang-kz>Мем. интеграция</span>
+            </span>
+          </div>
+          <div class="roadmap-title">
+            <span data-lang-ru>Официальный статус &amp; API Министерства</span>
+            <span data-lang-en>Official Status &amp; Ministry API</span>
+            <span data-lang-kz>Ресми мәртебе &amp; Министрлік API</span>
+          </div>
+          <ul class="roadmap-milestones">
+            <li data-lang-ru>Статус <strong>официальной платформы</strong> в рамках национальной AI-стратегии</li>
+            <li data-lang-en><strong>Official platform</strong> status within the National AI Strategy</li>
+            <li data-lang-kz>Ұлттық AI стратегиясы аясында <strong>ресми платформа</strong> мәртебесі</li>
+            <li data-lang-ru>Двусторонний <strong>API с госреестрами</strong> для оценки ROI гос. инвестиций</li>
+            <li data-lang-en>Bidirectional <strong>API with state registries</strong> for measuring ROI of government investments</li>
+            <li data-lang-kz>Мемлекеттік инвестициялардың ROI-ін бағалау үшін <strong>мемлекеттік тіркелімдермен API</strong></li>
+            <li data-lang-ru><strong>$30M+</strong> общего финансирования через платформу</li>
+            <li data-lang-en><strong>$30M+</strong> total funding through the platform</li>
+            <li data-lang-kz>Платформа арқылы <strong>$30M+</strong> жалпы қаражат</li>
+          </ul>
+        </div>
+
+        <!-- Q4 2027–Q4 2028 — FUTURE -->
+        <div class="roadmap-card future fade-up d2">
+          <div class="roadmap-card-header">
+            <span class="roadmap-quarter">Q4 2027 — Q4 2028</span>
+            <span class="roadmap-status-badge">
+              <span data-lang-ru>Series A · Единороги</span>
+              <span data-lang-en>Series A · Unicorns</span>
+              <span data-lang-kz>Series A · Бір мүйізділер</span>
+            </span>
+          </div>
+          <div class="roadmap-title">
+            <span data-lang-ru>Выход на Series A &amp; первые единороги</span>
+            <span data-lang-en>Series A Round &amp; First Unicorns</span>
+            <span data-lang-kz>Series A &amp; алғашқы бір мүйізділер</span>
+          </div>
+          <ul class="roadmap-milestones">
+            <li data-lang-ru><strong>500+ стартапов</strong> в полном цикле, 100+ инвесторов</li>
+            <li data-lang-en><strong>500+ startups</strong> in full cycle, 100+ investors</li>
+            <li data-lang-kz>Толық цикл <strong>500+ стартап</strong>, 100+ инвестор</li>
+            <li data-lang-ru><strong>3+ единорога</strong> — стартапы из портфеля CASE с оценкой $1B+</li>
+            <li data-lang-en><strong>3+ unicorns</strong> — CASE portfolio startups at $1B+ valuation</li>
+            <li data-lang-kz><strong>3+ бір мүйізді</strong> — $1B+ бағалауымен CASE портфелінің стартаптары</li>
+            <li data-lang-ru>Выход на рынки <strong>MENA и Восточной Европы</strong></li>
+            <li data-lang-en>Expansion into <strong>MENA and Eastern Europe</strong></li>
+            <li data-lang-kz><strong>MENA және Шығыс Еуропа</strong> нарықтарына шығу</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ SUPPORTERS ═══════ -->
+  <div class="supporters-section">
+    <div class="container--wide">
+
+      <div style="text-align:center; margin-bottom: 8px;" class="fade-up">
+        <div class="section-tag" style="display:inline-block;">
+          <span data-lang-ru>Готовы поддержать уже сейчас</span>
+          <span data-lang-en>Ready to Support Right Now</span>
+          <span data-lang-kz>Қазірдің өзінде қолдауға дайын</span>
+        </div>
+      </div>
+
+      <h2 class="section-h2 fade-up d1" style="text-align:center; margin:0 auto 16px; max-width:680px;">
+        <span data-lang-ru>12 организаций — якорная сеть поддержки CASE</span>
+        <span data-lang-en>12 Organisations — CASE Anchor Support Network</span>
+        <span data-lang-kz>12 ұйым — CASE якорьлық қолдау желісі</span>
+      </h2>
+      <p style="text-align:center; font-size:14px; color:var(--text2); max-width:580px; margin:0 auto 0;" class="fade-up d2">
+        <span data-lang-ru>Ведущие венчурные фонды, технологические ассоциации, университеты и бизнес-сообщества Казахстана подтвердили интерес к партнёрству с платформой CASE.</span>
+        <span data-lang-en>Leading venture funds, tech associations, universities, and business communities of Kazakhstan have confirmed interest in partnering with the CASE platform.</span>
+        <span data-lang-kz>Қазақстанның жетекші венчурлық қорлары, технологиялық бірлестіктері, университеттер мен бизнес-қоғамдастықтары CASE платформасымен серіктестікке қызығушылық білдірді.</span>
+      </p>
+
+      <div class="supporters-grid fade-up d3">
+
+        <div class="supporter-card sc-gold">
+          <div class="supporter-type">
+            <span data-lang-ru>Отраслевая ассоциация</span>
+            <span data-lang-en>Industry Association</span>
+            <span data-lang-kz>Салалық бірлестік</span>
+          </div>
+          <div class="supporter-name">IT Ассоциация Казахстана</div>
+        </div>
+
+        <div class="supporter-card sc-silver">
+          <div class="supporter-type">
+            <span data-lang-ru>Венчурный фонд</span>
+            <span data-lang-en>Venture Fund</span>
+            <span data-lang-kz>Венчурлық қор</span>
+          </div>
+          <div class="supporter-name">BGLOBAL VENTURES</div>
+        </div>
+
+        <div class="supporter-card sc-blue">
+          <div class="supporter-type">
+            <span data-lang-ru>AI-компания</span>
+            <span data-lang-en>AI Company</span>
+            <span data-lang-kz>AI компаниясы</span>
+          </div>
+          <div class="supporter-name">ALEM AI</div>
+        </div>
+
+        <div class="supporter-card sc-green">
+          <div class="supporter-type">
+            <span data-lang-ru>Венчурная группа</span>
+            <span data-lang-en>Venture Group</span>
+            <span data-lang-kz>Венчурлық топ</span>
+          </div>
+          <div class="supporter-name">Qazaqstan Venture Group</div>
+        </div>
+
+        <div class="supporter-card sc-purple">
+          <div class="supporter-type">
+            <span data-lang-ru>Инновационный хаб · Алматы</span>
+            <span data-lang-en>Innovation Hub · Almaty</span>
+            <span data-lang-kz>Инновациялық хаб · Алматы</span>
+          </div>
+          <div class="supporter-name">The Foundry</div>
+        </div>
+
+        <div class="supporter-card sc-orange">
+          <div class="supporter-type">
+            <span data-lang-ru>Венчурная платформа</span>
+            <span data-lang-en>Venture Platform</span>
+            <span data-lang-kz>Венчурлық платформа</span>
+          </div>
+          <div class="supporter-name">MyVentures</div>
+        </div>
+
+        <div class="supporter-card sc-blue">
+          <div class="supporter-type">
+            <span data-lang-ru>Технический университет</span>
+            <span data-lang-en>Technical University</span>
+            <span data-lang-kz>Техникалық университет</span>
+          </div>
+          <div class="supporter-name">Satbayev University</div>
+        </div>
+
+        <div class="supporter-card sc-gold">
+          <div class="supporter-type">
+            <span data-lang-ru>IT-сообщество</span>
+            <span data-lang-en>IT Community</span>
+            <span data-lang-kz>IT-қоғамдастық</span>
+          </div>
+          <div class="supporter-name">QAZAQ IT COMMUNITY</div>
+        </div>
+
+        <div class="supporter-card sc-teal">
+          <div class="supporter-type">
+            <span data-lang-ru>Университетский инкубатор</span>
+            <span data-lang-en>University Incubator</span>
+            <span data-lang-kz>Университет инкубаторы</span>
+          </div>
+          <div class="supporter-name">KBTU Startup Incubator</div>
+        </div>
+
+        <div class="supporter-card sc-red">
+          <div class="supporter-type">
+            <span data-lang-ru>Союз проектных менеджеров</span>
+            <span data-lang-en>Union of Project Managers RK</span>
+            <span data-lang-kz>ҚР Жобалық менеджерлер одағы</span>
+          </div>
+          <div class="supporter-name">СПМРК</div>
+        </div>
+
+        <div class="supporter-card sc-blue">
+          <div class="supporter-type">
+            <span data-lang-ru>Международная академия</span>
+            <span data-lang-en>International Academy</span>
+            <span data-lang-kz>Халықаралық академия</span>
+          </div>
+          <div class="supporter-name">МАИН</div>
+        </div>
+
+        <div class="supporter-card sc-gold">
+          <div class="supporter-type">
+            <span data-lang-ru>Инвестиционный фонд</span>
+            <span data-lang-en>Investment Fund</span>
+            <span data-lang-kz>Инвестициялық қор</span>
+          </div>
+          <div class="supporter-name">Axiom Capital</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ STRATEGIC ALIGNMENT ═══════ -->
+  <section>
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span data-lang-ru>Стратегическое Совпадение</span>
+        <span data-lang-en>Strategic Alignment</span>
+        <span data-lang-kz>Стратегиялық Сәйкестік</span>
+      </div>
+      <h2 class="section-h2 fade-up d1">
+        <span data-lang-ru>Министерство строит инфраструктуру.<br>CASE предоставляет рыночный слой.</span>
+        <span data-lang-en>The Ministry builds the infrastructure.<br>CASE provides the market layer.</span>
+        <span data-lang-kz>Министрлік инфрақұрылым салады.<br>CASE нарық қабатын ұсынады.</span>
+      </h2>
+
+      <div class="alignment-split fade-up d2">
+        <div class="alignment-panel">
+          <div class="alignment-panel-label" style="color: var(--blue);">
+            <span class="dot" style="background: var(--blue);"></span>
+            <span data-lang-ru>Министерство AI и Цифрового Развития</span>
+            <span data-lang-en>Ministry of AI &amp; Digital Development</span>
+            <span data-lang-kz>ЖИ және Цифрлық Даму Министрлігі</span>
+          </div>
+          <div class="alignment-panel-title">
+            <span data-lang-ru>Сквозная национальная<br>AI-инфраструктура</span>
+            <span data-lang-en>Cross-cutting national<br>AI infrastructure</span>
+            <span data-lang-kz>Ұлттық кросс-секторлық<br>AI-инфрақұрылымы</span>
+          </div>
+          <div class="alignment-panel-text">
+            <span data-lang-ru>Стратегия, регулирование, государственные реестры, стандарты, национальная программа поддержки технологических компаний и стартапов.</span>
+            <span data-lang-en>Strategy, regulation, state registries, standards, national program for supporting technology companies and startups.</span>
+            <span data-lang-kz>Стратегия, реттеу, мемлекеттік тіркелімдер, стандарттар, технологиялық компаниялар мен стартаптарды қолдаудың ұлттық бағдарламасы.</span>
+          </div>
+        </div>
+        <div class="alignment-arrow">→</div>
+        <div class="alignment-panel">
+          <div class="alignment-panel-label" style="color: var(--gold);">
+            <span class="dot" style="background: var(--gold);"></span>
+            CASE Ecosystem
+          </div>
+          <div class="alignment-panel-title">
+            <span data-lang-ru>Прозрачный, измеримый<br>венчурный рынок</span>
+            <span data-lang-en>Transparent, measurable<br>venture market</span>
+            <span data-lang-kz>Мөлдір, өлшенетін<br>венчурлық нарық</span>
+          </div>
+          <div class="alignment-panel-text">
+            <span data-lang-ru>AI-скоринг стартапов, матчинг с инвесторами, аналитика по 40+ метрикам, готовая инфраструктура для привлечения международного капитала в казахстанские стартапы.</span>
+            <span data-lang-en>Startup AI-scoring, investor matching, analytics across 40+ metrics — ready infrastructure for attracting international capital to Kazakhstani startups.</span>
+            <span data-lang-kz>Стартаптардың AI-скорингі, инвесторлармен сәйкестендіру, 40+ метрика бойынша аналитика — қазақстандық стартаптарға халықаралық капиталды тарту үшін дайын инфрақұрылым.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ COOPERATION DIRECTIONS ═══════ -->
+  <section style="background: var(--bg2);">
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span data-lang-ru>Возможные Направления</span>
+        <span data-lang-en>Proposed Synergies</span>
+        <span data-lang-kz>Ықтимал Бағыттар</span>
+      </div>
+      <h2 class="section-h2 fade-up d1">
+        <span data-lang-ru>Предложения по взаимодействию</span>
+        <span data-lang-en>Cooperation Directions</span>
+        <span data-lang-kz>Ынтымақтастық бағыттары</span>
+      </h2>
+      <p class="section-lead fade-up d2">
+        <span data-lang-ru>Мы видим потенциал для конкретного, измеримого сотрудничества по трём направлениям, каждое из которых усиливает задачи как Министерства, так и CASE.</span>
+        <span data-lang-en>We see potential for concrete, measurable cooperation in three directions, each reinforcing the goals of both the Ministry and CASE.</span>
+        <span data-lang-kz>Біз үш бағыт бойынша нақты, өлшенетін ынтымақтастыққа мүмкіндік көреміз, олардың әрқайсысы Министрліктің де, CASE-тің де міндеттерін күшейтеді.</span>
+      </p>
+
+      <div class="synergy-list">
+        <div class="synergy-item fade-up d1">
+          <div class="synergy-number">01</div>
+          <div>
+            <div class="synergy-content-title">
+              <span data-lang-ru>Интеграция с государственными реестрами</span>
+              <span data-lang-en>Integration with State Registries</span>
+              <span data-lang-kz>Мемлекеттік тіркелімдермен интеграция</span>
+            </div>
+            <div class="synergy-content-desc">
+              <span data-lang-ru>Интеграция аналитики платформы CASE с государственными реестрами и программами поддержки стартапов для создания единой, прозрачной базы данных венчурного рынка Казахстана.</span>
+              <span data-lang-en>Integrating CASE platform analytics with state registries and startup support programs to create a unified, transparent database of Kazakhstan's venture market, enabling real-time monitoring of government-backed initiatives.</span>
+              <span data-lang-kz>CASE платформасының аналитикасын мемлекеттік тіркелімдер мен стартаптарды қолдау бағдарламаларымен интеграциялау — Қазақстанның венчурлық нарығының бірыңғай, мөлдір дерекқорын жасау.</span>
+            </div>
+          </div>
+        </div>
+        <div class="synergy-item fade-up d2">
+          <div class="synergy-number">02</div>
+          <div>
+            <div class="synergy-content-title">
+              <span data-lang-ru>Оценка ROI государственных инвестиций</span>
+              <span data-lang-en>Measuring ROI of Government Venture Investments</span>
+              <span data-lang-kz>Мемлекеттік инвестициялардың ROI-ін бағалау</span>
+            </div>
+            <div class="synergy-content-desc">
+              <span data-lang-ru>Использование аналитики CASE и AI-скоринга CASEM для объективной, независимой оценки эффективности государственных венчурных инвестиций по 40+ метрикам — устранение субъективности в отчётности.</span>
+              <span data-lang-en>Using CASE analytics and CASEM AI-scoring to provide objective, independent assessment of government venture investment effectiveness across 40+ metrics — eliminating subjectivity in state reporting.</span>
+              <span data-lang-kz>CASE аналитикасы мен CASEM AI-скорингін мемлекеттік венчурлық инвестициялардың тиімділігін 40+ метрика бойынша объективті, тәуелсіз бағалау үшін пайдалану.</span>
+            </div>
+          </div>
+        </div>
+        <div class="synergy-item fade-up d3">
+          <div class="synergy-number">03</div>
+          <div>
+            <div class="synergy-content-title">
+              <span data-lang-ru>Официальный статус в рамках национальной AI-стратегии</span>
+              <span data-lang-en>Official Status within the National AI Strategy</span>
+              <span data-lang-kz>Ұлттық AI стратегиясы аясындағы ресми мәртебе</span>
+            </div>
+            <div class="synergy-content-desc">
+              <span data-lang-ru>Придание CASE официального статуса в рамках национальной AI-стратегии Казахстана — признание платформы как стандарта оценки и управления инновационным рынком страны.</span>
+              <span data-lang-en>Assigning CASE official status within Kazakhstan's National AI Strategy — recognizing the platform as the standard for evaluating and managing the country's innovation market, signaling credibility to international investors.</span>
+              <span data-lang-kz>CASE-ке Қазақстанның ұлттық AI стратегиясы аясында ресми мәртебе беру — платформаны елдің инновациялық нарығын бағалау мен басқарудың стандарты ретінде тану.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-eyebrow fade-up">
+        <span data-lang-ru>Astana Hub · Инфраструктура готова к работе</span>
+        <span data-lang-en>Astana Hub · Infrastructure is operational</span>
+        <span data-lang-kz>Astana Hub · Инфрақұрылым жұмысқа дайын</span>
+      </div>
+      <h2 class="cta-headline fade-up d1">
+        <span data-lang-ru>Готовы к техническому брифингу<br><span class="gold">в любое удобное время</span></span>
+        <span data-lang-en>Ready for a Technical Briefing<br><span class="gold">at Your Convenience</span></span>
+        <span data-lang-kz>Техникалық брифингке<br><span class="gold">кез келген ыңғайлы уақытта дайынбыз</span></span>
+      </h2>
+      <p class="cta-sub fade-up d2">
+        <span data-lang-ru>В настоящее время я нахожусь в Astana Hub и готов организовать личную встречу. Готов заблаговременно предоставить полный питч-материал и документацию по платформе.</span>
+        <span data-lang-en>Currently based in Astana Hub and ready to arrange a personal meeting. Happy to provide the full pitch deck and platform documentation in advance.</span>
+        <span data-lang-kz>Қазіргі уақытта Astana Hub-та тұрамын және жеке кездесу ұйымдастыруға дайынмын. Алдын ала толық питч-материал мен платформа бойынша құжаттаманы беруге дайынмын.</span>
+      </p>
+
+      <div class="cta-buttons fade-up d3">
+        <a href="tel:+77066996633" class="btn btn-primary">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.59 1.13h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span data-lang-ru>Связаться / Назначить встречу</span>
+          <span data-lang-en>Contact / Schedule Meeting</span>
+          <span data-lang-kz>Байланысу / Кездесу тағайындау</span>
+        </a>
+        <a href="mailto:savva@benevsky-ithub.com?subject=CASE Ecosystem — Запрос на брифинг" class="btn btn-outline">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span data-lang-ru>Email — Питч &amp; Документация</span>
+          <span data-lang-en>Email — Pitch &amp; Documentation</span>
+          <span data-lang-kz>Email — Питч &amp; Құжаттама</span>
+        </a>
+      </div>
+
+      <!-- SIGNOFF -->
+      <div class="signoff fade-up d4">
+        <p class="signoff-farewell">
+          <span data-lang-ru>С уважением и готовностью к диалогу,</span>
+          <span data-lang-en>With respect and readiness for dialogue,</span>
+          <span data-lang-kz>Құрметпен және диалогқа дайынмын,</span>
+        </p>
+        <div class="signoff-name">Савва Беневский</div>
+        <div class="signoff-title">Founder &amp; CEO · Benevsky IT Hub / CASE Ecosystem</div>
+        <div style="font-size:11px; color: var(--text3); margin-bottom: 16px;">
+          <span data-lang-ru>Член Совета ИТК · Докторант Satbayev University</span>
+          <span data-lang-en>ITK Council Member · PhD Candidate, Satbayev University</span>
+          <span data-lang-kz>ITK Кеңесінің мүшесі · Satbayev University докторанты</span>
+        </div>
+        <div class="signoff-contacts">
+          <a href="tel:+77066996633" class="signoff-contact-item">
+            <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.59 1.13h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +7 706 699 66 33
+          </a>
+          <a href="https://t.me/benevsky" target="_blank" class="signoff-contact-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.008 9.464c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.871.757z"/></svg>
+            t.me/benevsky
+          </a>
+          <a href="https://linkedin.com/in/benevsky" target="_blank" class="signoff-contact-item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            linkedin.com/in/benevsky
+          </a>
+          <a href="https://benevsky.work" target="_blank" class="signoff-contact-item">
+            <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            benevsky.work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Benevsky IT Hub</a>
+        <a href="index.html#ventures" class="footer-link">Ventures</a>
+        <a href="index.html#case" class="footer-link">CASE Ecosystem</a>
+        <a href="index.html#research" class="footer-link">Research</a>
+        <a href="index.html#contact" class="footer-link">Contact</a>
+      </div>
+      <div class="footer-copy">
+        © 2026 Benevsky IT Hub · CASE Ecosystem ·
+        <span data-lang-ru>Конфиденциально. Только для адресата.</span>
+        <span data-lang-en>Confidential. For addressee only.</span>
+        <span data-lang-kz>Құпия. Тек алушыға арналған.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════ JAVASCRIPT ═══════ -->
+  <script>
+    // ─── THEME TOGGLE ───
+    const themeBtn = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+
+    function setTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      try { localStorage.setItem('bih-theme', theme); } catch(e) {}
+    }
+
+    themeBtn.addEventListener('click', () => {
+      const current = htmlEl.getAttribute('data-theme');
+      setTheme(current === 'light' ? 'dark' : 'light');
+    });
+
+    // Restore saved theme — default to dark
+    try {
+      const savedTheme = localStorage.getItem('bih-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        setTheme(savedTheme);
+      } else {
+        // Check OS preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+      }
+    } catch(e) { setTheme('dark'); }
+
+    // ─── LANGUAGE SWITCHER ───
+    const langBtns = document.querySelectorAll('.lang-btn[data-lang-target]');
+    const html = document.documentElement;
+
+    function setLang(lang) {
+      html.setAttribute('data-lang', lang);
+      langBtns.forEach(b => b.classList.toggle('active', b.dataset.langTarget === lang));
+      try { localStorage.setItem('bih-lang', lang); } catch(e) {}
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.langTarget));
+    });
+
+    // Restore saved lang
+    try {
+      const saved = localStorage.getItem('bih-lang');
+      if (saved && ['ru','en','kz'].includes(saved)) setLang(saved);
+    } catch(e) {}
+
+    // ─── INTERSECTION OBSERVER (FADE-UP) ───
+    const fadeEls = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // ─── NAV SCROLL EFFECT ───
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.borderBottomColor = window.scrollY > 60
+        ? 'rgba(184,147,90,0.12)'
+        : 'rgba(255,255,255,0.06)';
+    }, { passive: true });
+
+    // ─── TRACTION COUNTER ANIMATION ───
+    const counters = document.querySelectorAll('.traction-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const text = el.textContent;
+        const num = parseInt(text);
+        const suffix = text.replace(/[0-9]/g, '');
+        if (isNaN(num)) return;
+
+        let start = 0;
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function update(now) {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * num) + suffix;
+          if (progress < 1) requestAnimationFrame(update);
+          else el.textContent = num + suffix;
+        }
+        requestAnimationFrame(update);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+
+    // ─── PREMIUM: 3D TILT ON MOUSE MOVE ───
+    document.querySelectorAll('.traction-card, .bevi-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+        card.style.transform = `perspective(600px) rotateY(${x * 6}deg) rotateX(${-y * 4}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // ─── PREMIUM: SUBTLE GLOW PULSE on section headings (very slow, smooth) ───
+    const h2s = document.querySelectorAll('.section-h2');
+    function triggerSubtleGlow() {
+      if (!h2s.length) return;
+      const el = h2s[Math.floor(Math.random() * h2s.length)];
+      el.style.transition = 'opacity 0.8s ease';
+      el.style.opacity = '0.7';
+      setTimeout(() => { el.style.opacity = '1'; }, 900);
+      setTimeout(triggerSubtleGlow, 12000 + Math.random() * 10000);
+    }
+    setTimeout(triggerSubtleGlow, 8000);
+
+    // ─── PREMIUM: NAV scroll color update for light/dark ───
+    window.addEventListener('scroll', () => {
+      const isLight = htmlEl.getAttribute('data-theme') === 'light';
+      if (window.scrollY > 60) {
+        nav.style.borderBottomColor = isLight
+          ? 'rgba(22,163,74,0.15)'
+          : 'rgba(184,147,90,0.12)';
+      } else {
+        nav.style.borderBottomColor = isLight
+          ? 'rgba(22,163,74,0.06)'
+          : 'rgba(255,255,255,0.06)';
+      }
+    }, { passive: true });
+
+    // ─── PREMIUM: PARTICLE speed variation ───
+    document.querySelectorAll('.hero-particles span').forEach((el, i) => {
+      el.style.width = (3 + Math.random() * 4) + 'px';
+      el.style.height = el.style.width;
+      el.style.opacity = (0.2 + Math.random() * 0.4).toFixed(2);
+    });
+  </script>
+</body>
+</html>
