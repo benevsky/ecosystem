@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI CEO Day — Астана 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.cdnfonts.com/css/gilroy-free');
+
+/* ══ DARK ══ */
+[data-theme="dark"] {
+  --bg:#000;--bg2:#070707;--bg3:#0D0D0D;--bg4:#131313;--bg5:#191919;
+  --gold:#B8935A;--gold2:#D4AF78;--gold3:#E8C97A;
+  --glow:rgba(184,147,90,.12);--glow-s:rgba(184,147,90,.35);
+  --text:#F2F2F2;--text2:#8E8E99;--text3:#4A4A55;
+  --border:rgba(255,255,255,.06);--border-g:rgba(184,147,90,.22);
+  --card:#0D0D0D;--card2:#131313;
+  --nb:rgba(0,0,0,.72);--nb-s:rgba(0,0,0,.95);
+  --tag-bg:rgba(184,147,90,.09);--tag-bd:rgba(184,147,90,.25);
+  --input-bg:rgba(255,255,255,.04);--input-bd:rgba(255,255,255,.1);
+  --shadow:rgba(0,0,0,.55);--sh2:rgba(0,0,0,.8);
+  --green:#34D399;--red:#E8564A;
+}
+/* ══ LIGHT ══ */
+[data-theme="light"] {
+  --bg:#F8F8F8;--bg2:#F0F0F1;--bg3:#E8E8EA;--bg4:#E0E0E2;--bg5:#D8D8DB;
+  --gold:#9A6E2F;--gold2:#B8892E;--gold3:#C9A040;
+  --glow:rgba(154,110,47,.07);--glow-s:rgba(154,110,47,.25);
+  --text:#0F0F0F;--text2:#55555F;--text3:#AAAAB5;
+  --border:rgba(0,0,0,.07);--border-g:rgba(154,110,47,.22);
+  --card:#FFFFFF;--card2:#F4F4F5;
+  --nb:rgba(248,248,248,.85);--nb-s:rgba(248,248,248,.98);
+  --tag-bg:rgba(154,110,47,.08);--tag-bd:rgba(154,110,47,.2);
+  --input-bg:rgba(0,0,0,.03);--input-bd:rgba(0,0,0,.12);
+  --shadow:rgba(0,0,0,.1);--sh2:rgba(0,0,0,.2);
+  --green:#16A34A;--red:#DC2626;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:rgba(184,147,90,.3);border-radius:2px}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none}
+img{display:block;max-width:100%}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1140px;margin:0 auto;padding:0 clamp(18px,5vw,72px)}
+.sec{padding:clamp(72px,10vh,140px) 0;position:relative}
+
+/* ── TYPE ── */
+.g{background:linear-gradient(135deg,var(--gold),var(--gold2) 50%,var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tag{display:inline-flex;align-items:center;gap:6px;background:var(--tag-bg);border:1px solid var(--tag-bd);border-radius:100px;padding:5px 16px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
+.sh{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(30px,4.2vw,52px);letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
+.sd{font-size:clamp(14px,1.45vw,17px);color:var(--text2);line-height:1.75}
+.hdr{margin-bottom:clamp(44px,6vh,68px)}
+.hdr.c{text-align:center;margin-left:auto;margin-right:auto;max-width:680px}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4vw,48px);background:var(--nb);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);border-bottom:1px solid var(--border);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.nav.s{background:var(--nb-s);border-bottom-color:var(--border-g)}
+.logo{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:14px;letter-spacing:.05em;display:flex;align-items:center;gap:2px}
+.logo .a{color:var(--gold)}
+.nl{display:flex;align-items:center;gap:26px}
+.nl a{font-size:12px;letter-spacing:.02em;color:var(--text2);transition:color .25s;position:relative}
+.nl a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nl a:hover{color:var(--text)}
+.nl a:hover::after{transform:scaleX(1);transform-origin:left}
+.nr{display:flex;align-items:center;gap:8px}
+.ls{display:flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;overflow:hidden}
+[data-theme="light"] .ls{background:rgba(0,0,0,.05)}
+.lb{padding:5px 11px;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--text2);transition:all .22s}
+.lb.on{background:var(--gold);color:#000;border-radius:100px}
+.lb:hover:not(.on){color:var(--text)}
+.tt{width:32px;height:32px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s}
+.tt:hover{border-color:var(--border-g);transform:rotate(20deg)}
+.ncta{display:inline-flex;align-items:center;background:var(--gold);color:#000;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:12px;padding:7px 18px;border-radius:100px;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.ncta:hover{background:var(--gold2);transform:scale(1.04);box-shadow:0 4px 20px var(--glow-s)}
+.hbg{display:none;width:36px;height:36px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.hbg span{width:16px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
+.mn{position:fixed;top:56px;left:0;right:0;z-index:999;background:var(--nb-s);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border-bottom:1px solid var(--border);padding:20px clamp(18px,4vw,48px);transform:translateY(-110%);opacity:0;transition:all .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;gap:14px}
+.mn.open{transform:translateY(0);opacity:1}
+.mn a{font-size:15px;color:var(--text2);padding:3px 0}
+.mn-b{display:flex;align-items:center;gap:8px;margin-top:6px;padding-top:14px;border-top:1px solid var(--border)}
+@media(max-width:1023px){.nl{display:none}.hbg{display:flex}}
+@media(max-width:767px){.ncta{display:none}}
+
+/* ── BTNS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:14px;padding:14px 36px;border-radius:100px;border:none;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .3s}
+.btn:hover::before{opacity:1}
+.btn-g{background:var(--gold);color:#000}
+.btn-g:hover{background:var(--gold2);transform:translateY(-2px) scale(1.02);box-shadow:0 10px 40px var(--glow-s)}
+.btn-o{background:transparent;color:var(--text);border:1px solid var(--border-g)}
+.btn-o:hover{background:var(--tag-bg);transform:translateY(-1px)}
+.btn-sm{padding:10px 24px;font-size:13px}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px clamp(18px,5vw,72px) clamp(60px,8vh,100px);position:relative;overflow:hidden}
+.hg{position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);width:140vw;height:140vw;max-width:1800px;background:radial-gradient(circle,rgba(184,147,90,.08) 0%,rgba(184,147,90,.03) 28%,transparent 55%);pointer-events:none;animation:amb 9s ease-in-out infinite}
+[data-theme="light"] .hg{background:radial-gradient(circle,rgba(154,110,47,.06) 0%,rgba(154,110,47,.02) 28%,transparent 55%)}
+@keyframes amb{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)}50%{opacity:.6;transform:translate(-50%,-50%) scale(1.06)}}
+.hgrid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent);opacity:.4}
+.parts{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.p{position:absolute;border-radius:50%;opacity:0;background:var(--gold);animation:pf var(--d,8s) var(--dl,0s) ease-in-out infinite}
+@keyframes pf{0%{opacity:0;transform:translateY(100vh)}10%{opacity:var(--o,.3)}90%{opacity:var(--o,.3)}100%{opacity:0;transform:translateY(-20vh)}}
+.hero-in{position:relative;z-index:2;width:100%}
+.heb{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.hbadge{background:var(--tag-bg);border:1px solid var(--tag-bd);border-radius:100px;padding:6px 18px;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold)}
+.hdate{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-size:11.5px;color:var(--text2);letter-spacing:.03em}
+[data-theme="light"] .hdate{background:rgba(0,0,0,.05)}
+.ht{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(50px,8.5vw,112px);letter-spacing:-.04em;line-height:.93;margin-bottom:30px}
+.hs{font-size:clamp(15px,1.55vw,18px);color:var(--text2);max-width:620px;margin:0 auto 48px;line-height:1.75}
+.ha{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:60px}
+.hst{display:flex;align-items:center;gap:clamp(20px,4vw,52px);flex-wrap:wrap;justify-content:center}
+.st{text-align:center}
+.sn{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(28px,4vw,48px);letter-spacing:-.04em;line-height:1}
+.sl{font-size:11.5px;color:var(--text2);letter-spacing:.04em;margin-top:4px}
+.sd2{width:1px;height:44px;background:var(--border)}
+
+/* ── PARTNERS STRIP (hero level) ── */
+.pstrip{padding:clamp(36px,5vh,56px) 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border-g)}
+.pstrip-inner{display:flex;align-items:center;justify-content:center;gap:clamp(24px,4vw,56px);flex-wrap:wrap}
+.pstrip-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);white-space:nowrap}
+.ps-div{width:1px;height:32px;background:var(--border-g);flex-shrink:0}
+.ps-div2{width:1px;height:32px;background:var(--border);flex-shrink:0}
+.pcard-sm{display:flex;align-items:center;gap:12px;transition:opacity .25s}
+.pcard-sm:hover{opacity:.7}
+.pcard-sm-logo{width:44px;height:44px;border-radius:12px;background:var(--tag-bg);border:1px solid var(--tag-bd);display:flex;align-items:center;justify-content:center;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:15px;font-weight:900;color:var(--gold);flex-shrink:0}
+.pcard-sm-info span{display:block;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:13px;font-weight:700}
+.pcard-sm-info small{font-size:11px;color:var(--text2)}
+
+/* ── TOPIC SECTION ── */
+.topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
+@media(max-width:767px){.topic-grid{grid-template-columns:1fr}}
+.tc{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,3.5vw,44px);transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .4s}
+.tc:hover{border-color:var(--border-g);transform:translateY(-4px);box-shadow:0 20px 60px var(--shadow)}
+.tc:hover::before{opacity:1}
+.tc.sp2{grid-column:span 2}
+@media(max-width:767px){.tc.sp2{grid-column:span 1}}
+.tc-ico{width:46px;height:46px;border-radius:13px;background:var(--tag-bg);border:1px solid var(--tag-bd);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px}
+.tc-n{font-size:clamp(18px,2vw,23px);font-family:'Gilroy-ExtraBold','Inter',sans-serif;margin-bottom:9px;line-height:1.2}
+.tc-d{font-size:clamp(13px,1.3vw,15px);color:var(--text2);line-height:1.7}
+.tc-num{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(52px,7vw,84px);line-height:1;margin-bottom:12px;-webkit-text-stroke:1px rgba(184,147,90,.18);-webkit-text-fill-color:transparent;color:transparent}
+
+/* ── AUDIENCE ── */
+.aud-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.5vw,20px)}
+@media(max-width:900px){.aud-grid{grid-template-columns:1fr}}
+.ac{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:clamp(22px,2.8vw,34px);display:flex;align-items:flex-start;gap:18px;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.ac:hover{border-color:var(--border-g);background:var(--card2);transform:translateX(4px)}
+.ac-ico{width:48px;height:48px;border-radius:14px;background:var(--tag-bg);border:1px solid var(--tag-bd);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ac-role{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(15px,1.5vw,18px);margin-bottom:6px}
+.ac-d{font-size:13px;color:var(--text2);line-height:1.65}
+
+/* ── PROGRAM ── */
+.prog-timeline{display:flex;flex-direction:column;gap:0}
+.pti{display:grid;grid-template-columns:120px 1fr;gap:0;position:relative}
+.pti:not(:last-child) .pti-line{position:absolute;left:15px;top:34px;bottom:-1px;width:1px;background:linear-gradient(to bottom,var(--border-g),var(--border))}
+.pti-time{padding:28px 20px 28px 0;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.pti-t{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.04em}
+.pti-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);box-shadow:0 0 0 3px var(--glow);position:absolute;left:11px;top:30px}
+.pti-body{border-left:1px solid var(--border-g);padding:24px 0 24px 28px;margin-left:10px}
+.pti:last-child .pti-body{padding-bottom:0}
+.pti-name{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(15px,1.5vw,18px);margin-bottom:6px}
+.pti-desc{font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.pti-badge{display:inline-flex;align-items:center;gap:5px;background:var(--tag-bg);border:1px solid var(--tag-bd);border-radius:100px;padding:3px 12px;font-size:11px;color:var(--gold);font-weight:600}
+@media(max-width:600px){.pti{grid-template-columns:90px 1fr}.pti-time{padding-right:10px}.pti-line{left:10px}.pti-dot{left:6px}}
+
+/* ── WHY ── */
+.why-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+@media(max-width:900px){.why-layout{grid-template-columns:1fr}}
+.metric-list{display:flex;flex-direction:column;gap:16px}
+.mi{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:clamp(16px,2vw,24px);transition:border-color .3s}
+.mi:hover{border-color:var(--border-g)}
+.mv{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(28px,4vw,44px);letter-spacing:-.04em;line-height:1;flex-shrink:0;min-width:88px}
+.mi h4{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(14px,1.4vw,17px);margin-bottom:4px}
+.mi p{font-size:13px;color:var(--text2);line-height:1.55}
+
+/* ── PARTNERS FULL ── */
+.part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+@media(max-width:767px){.part-grid{grid-template-columns:1fr}}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:clamp(28px,4vw,48px);transition:all .4s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
+.pc:hover{border-color:var(--border-g);transform:translateY(-5px);box-shadow:0 24px 72px var(--shadow)}
+.pc-logo{width:80px;height:80px;border-radius:20px;background:var(--tag-bg);border:1px solid var(--tag-bd);display:flex;align-items:center;justify-content:center;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:24px;font-weight:900;color:var(--gold);margin-bottom:20px}
+.pc-name{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(17px,1.8vw,21px);margin-bottom:8px}
+.pc-desc{font-size:13.5px;color:var(--text2);line-height:1.65;flex:1}
+.pc-role{display:inline-block;margin-top:18px;background:var(--tag-bg);border:1px solid var(--tag-bd);border-radius:100px;padding:4px 14px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.04em}
+.pc-link{margin-top:12px;font-size:13px;color:var(--gold);display:inline-flex;align-items:center;gap:5px;transition:gap .25s}
+.pc-link:hover{gap:8px}
+.pc.main{border-color:var(--border-g);background:linear-gradient(145deg,var(--card),var(--card2))}
+.pc.main::before{content:'';position:absolute;inset:0;border-radius:22px;background:linear-gradient(145deg,var(--glow),transparent);pointer-events:none}
+.pc.main{position:relative}
+
+/* ── EXPERTS ── */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,20px)}
+@media(max-width:767px){.exp-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.exp-grid{grid-template-columns:1fr}}
+.ec{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:clamp(22px,3vw,32px);text-align:center;transition:all .35s cubic-bezier(.16,1,.3,1)}
+.ec:hover{border-color:var(--border-g);transform:translateY(-3px);box-shadow:0 16px 48px var(--shadow)}
+.ec-av{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold3));margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:24px;font-weight:900;color:#000}
+.ec-name{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:15px;margin-bottom:5px}
+.ec-pos{font-size:12px;color:var(--text2);line-height:1.5}
+.ec-co{font-size:11px;color:var(--gold);margin-top:6px;font-weight:600}
+
+/* ── LOCATION ── */
+.loc-card{background:var(--card);border:1px solid var(--border-g);border-radius:24px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,56px);align-items:center}
+@media(max-width:767px){.loc-card{grid-template-columns:1fr}}
+.loc-map{border-radius:16px;overflow:hidden;min-height:260px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative}
+.loc-mg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:22px 22px}
+.loc-dot{position:relative;z-index:2;width:22px;height:22px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px var(--glow),0 0 0 14px rgba(184,147,90,.04);animation:lping 2.2s ease-in-out infinite}
+@keyframes lping{0%,100%{box-shadow:0 0 0 6px var(--glow),0 0 0 14px rgba(184,147,90,.04)}50%{box-shadow:0 0 0 12px var(--glow),0 0 0 24px rgba(184,147,90,.04)}}
+.loc-info h3{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(22px,2.8vw,32px);letter-spacing:-.02em;margin-bottom:10px}
+.loc-ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.loc-ul li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2)}
+.li{flex-shrink:0;color:var(--gold)}
+
+/* ── REGISTER ── */
+.reg-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start}
+@media(max-width:900px){.reg-layout{grid-template-columns:1fr}}
+.rf{background:var(--card);border:1px solid var(--border-g);border-radius:24px;padding:clamp(32px,4vw,52px)}
+.rf-title{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(20px,2.2vw,26px);margin-bottom:22px}
+.fg{margin-bottom:14px}
+.fl{font-size:13px;color:var(--text2);margin-bottom:6px;display:block;font-weight:500}
+.fi{width:100%;background:var(--input-bg);border:1px solid var(--input-bd);border-radius:12px;padding:12px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;transition:border-color .3s;outline:none}
+.fi:focus{border-color:var(--gold)}
+.fi::placeholder{color:var(--text3)}
+.fsel{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.fsub{width:100%;padding:14px;border-radius:100px;background:var(--gold);color:#000;font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:15px;border:none;cursor:pointer;transition:all .3s;margin-top:6px}
+.fsub:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 32px var(--glow-s)}
+.fnote{font-size:11.5px;color:var(--text3);text-align:center;margin-top:12px;line-height:1.6}
+.succ{display:none;text-align:center;padding:32px}
+.succ.on{display:block}
+.sck{font-size:52px;margin-bottom:14px}
+.succ h3{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:22px;margin-bottom:8px}
+.succ p{font-size:14px;color:var(--text2)}
+.rb-list{display:flex;flex-direction:column;gap:20px}
+.rb{display:flex;align-items:flex-start;gap:16px}
+.rb-ico{width:46px;height:46px;border-radius:13px;background:var(--tag-bg);border:1px solid var(--tag-bd);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.rb h4{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(15px,1.5vw,17px);margin-bottom:5px}
+.rb p{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* ── CTA FINAL ── */
+.ctaf{text-align:center;padding:clamp(100px,14vh,180px) clamp(18px,5vw,72px);position:relative;overflow:hidden}
+.ctag{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,var(--glow) 0%,transparent 60%);pointer-events:none}
+.ctaf h2{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(38px,6vw,80px);letter-spacing:-.04em;line-height:1.05;margin-bottom:22px;position:relative}
+.ctaf p{font-size:clamp(15px,1.55vw,18px);color:var(--text2);max-width:560px;margin:0 auto 44px;line-height:1.75;position:relative}
+.ctaf-a{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+
+/* ── FOOTER ── */
+.footer{border-top:1px solid var(--border);padding:clamp(48px,6vh,72px) 0 clamp(32px,4vh,48px)}
+.fg2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(24px,4vw,56px)}
+@media(max-width:900px){.fg2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fg2{grid-template-columns:1fr}}
+.fb p{font-size:13px;color:var(--text2);margin-top:10px;line-height:1.65;max-width:280px}
+.fc h4{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text2);margin-bottom:14px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:10px}
+.flinks a{font-size:13px;color:var(--text2);transition:color .25s}
+.flinks a:hover{color:var(--gold)}
+.fbot{margin-top:clamp(32px,4vh,48px);padding-top:22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fcp{font-size:12px;color:var(--text3)}
+.soc{display:flex;gap:8px}
+.sb{width:32px;height:32px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .25s}
+.sb:hover{border-color:var(--border-g);color:var(--gold);transform:translateY(-2px)}
+
+/* ── FADE IN ── */
+.fu{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.fu.v{opacity:1;transform:none}
+.fu:nth-child(2){transition-delay:.1s}
+.fu:nth-child(3){transition-delay:.2s}
+.fu:nth-child(4){transition-delay:.3s}
+.fu:nth-child(5){transition-delay:.4s}
+.fu:nth-child(6){transition-delay:.5s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="logo">AI<span class="a">★</span>CEO DAY</a>
+  <div class="nl">
+    <a href="#topic" lk="n_topic">Тема</a>
+    <a href="#program" lk="n_prog">Программа</a>
+    <a href="#partners" lk="n_part">Партнёры</a>
+    <a href="#location" lk="n_loc">Место</a>
+    <a href="#register" lk="n_reg">Участвовать</a>
+  </div>
+  <div class="nr">
+    <div class="ls">
+      <button class="lb on" data-lang="ru">RU</button>
+      <button class="lb" data-lang="kz">KZ</button>
+      <button class="lb" data-lang="en">EN</button>
+    </div>
+    <button class="tt" id="tt">🌙</button>
+    <a href="#register" class="ncta" lk="n_cta">Записаться →</a>
+    <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mn" id="mn">
+  <a href="#topic" lk="n_topic">Тема</a>
+  <a href="#program" lk="n_prog">Программа</a>
+  <a href="#partners" lk="n_part">Партнёры</a>
+  <a href="#location" lk="n_loc">Место</a>
+  <div class="mn-b">
+    <div class="ls">
+      <button class="lb on" data-lang="ru">RU</button>
+      <button class="lb" data-lang="kz">KZ</button>
+      <button class="lb" data-lang="en">EN</button>
+    </div>
+    <button class="tt" id="tt2">🌙</button>
+    <a href="#register" class="btn btn-g btn-sm" lk="n_cta">Записаться →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hg"></div>
+  <div class="hgrid"></div>
+  <div class="parts" id="parts"></div>
+  <div class="hero-in">
+    <div class="heb">
+      <span class="hbadge" lk="h_badge">AI CEO Day — Астана 2026</span>
+      <span class="hdate" lk="h_date">📅 Один день · Офлайн · Астана</span>
+    </div>
+    <h1 class="ht">
+      <span lk="h_t1">ИИ-генеральный</span><br>
+      <span class="g" lk="h_t2">директор</span><br>
+      <span lk="h_t3">вашего бизнеса</span>
+    </h1>
+    <p class="hs" lk="h_sub">Закрытая однодневная конференция для собственников бизнеса. Разбор реальных кейсов: как внедрить AI-технологии и систему управления знаниями компании — с топовыми профессионалами.</p>
+    <div class="ha">
+      <a href="#register" class="btn btn-g" lk="h_cta1">Забронировать место →</a>
+      <a href="#program" class="btn btn-o" lk="h_cta2">Программа дня</a>
+    </div>
+    <div class="hst">
+      <div class="st"><div class="sn g">50</div><div class="sl" lk="s1">мест</div></div>
+      <div class="sd2"></div>
+      <div class="st"><div class="sn g">1</div><div class="sl" lk="s2">день</div></div>
+      <div class="sd2"></div>
+      <div class="st"><div class="sn g">8+</div><div class="sl" lk="s3">спикеров</div></div>
+      <div class="sd2"></div>
+      <div class="st"><div class="sn g">3</div><div class="sl" lk="s4">партнёра</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS STRIP -->
+<div class="pstrip">
+  <div class="wrap">
+    <div class="pstrip-inner">
+      <span class="pstrip-label" lk="ps_label">Генеральные партнёры</span>
+      <div class="ps-div"></div>
+      <a href="https://benevsky.work/aibusiness" target="_blank" class="pcard-sm">
+        <div class="pcard-sm-logo">B</div>
+        <div class="pcard-sm-info">
+          <span>Benevsky IT Hub</span>
+          <small lk="ps1_sub">AI-решения для бизнеса</small>
+        </div>
+      </a>
+      <div class="ps-div2"></div>
+      <a href="https://innovation-allience.vercel.app/" target="_blank" class="pcard-sm">
+        <div class="pcard-sm-logo">IA</div>
+        <div class="pcard-sm-info">
+          <span>Innovation Alliance</span>
+          <small lk="ps2_sub">Экосистема инноваций</small>
+        </div>
+      </a>
+      <div class="ps-div2"></div>
+      <a href="https://telematika.kz/" target="_blank" class="pcard-sm">
+        <div class="pcard-sm-logo">TT</div>
+        <div class="pcard-sm-info">
+          <span>Turan Telematica</span>
+          <small lk="ps3_sub">IT и телекоммуникации</small>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TOPIC -->
+<section class="sec" id="topic" style="background:var(--bg2);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="hdr c fu">
+      <div class="tag" lk="tp_tag">О чём день</div>
+      <h2 class="sh" lk="tp_title">Ваш бизнес управляется данными — или ещё нет</h2>
+      <p class="sd" lk="tp_desc">Компании, которые выстроили систему управления знаниями и подключили ИИ-директора, принимают решения в 3 раза быстрее и с вдвое меньшими ошибками. Один день — чтобы понять как и начать.</p>
+    </div>
+    <div class="topic-grid">
+      <div class="tc fu">
+        <div class="tc-ico">🧠</div>
+        <div class="tc-num">01</div>
+        <h3 class="tc-n" lk="tp1_n">AI-генеральный директор</h3>
+        <p class="tc-d" lk="tp1_d">Что это значит на практике: ИИ, который знает всё о вашем бизнесе, отвечает на вопросы CEO, анализирует данные и предлагает решения — в режиме реального времени.</p>
+      </div>
+      <div class="tc fu">
+        <div class="tc-ico">📚</div>
+        <div class="tc-num">02</div>
+        <h3 class="tc-n" lk="tp2_n">Система управления знаниями</h3>
+        <p class="tc-d" lk="tp2_d">Как собрать, структурировать и подключить все знания компании: регламенты, отчёты, переписка, опыт сотрудников — чтобы ИИ мог с ними работать.</p>
+      </div>
+      <div class="tc fu">
+        <div class="tc-ico">⚡</div>
+        <div class="tc-num">03</div>
+        <h3 class="tc-n" lk="tp3_n">Реальные кейсы внедрения</h3>
+        <p class="tc-d" lk="tp3_d">Разборы от собственников, которые уже прошли этот путь: что работает, что не работает, сколько стоит, какой результат через 3 месяца.</p>
+      </div>
+      <div class="tc fu">
+        <div class="tc-ico">🛠️</div>
+        <div class="tc-num">04</div>
+        <h3 class="tc-n" lk="tp4_n">Практические воркшопы</h3>
+        <p class="tc-d" lk="tp4_d">Работаем с вашей бизнес-ситуацией прямо на месте. Уходите с конкретным планом первых шагов — не общими рекомендациями, а персональным роадмапом.</p>
+      </div>
+      <div class="tc sp2 fu" style="background:linear-gradient(135deg,var(--tag-bg),transparent)">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px">
+          <div style="flex:1;min-width:240px">
+            <div class="tc-ico">🏆</div>
+            <h3 class="tc-n" lk="tp5_n">Главный результат дня</h3>
+            <p class="tc-d" lk="tp5_d">Каждый участник уходит с персональным планом внедрения AI-системы управления знаниями для своего бизнеса — составленным совместно с экспертами прямо на конференции.</p>
+          </div>
+          <div style="display:flex;gap:14px;flex-wrap:wrap">
+            <div style="background:var(--card);border:1px solid var(--border-g);border-radius:14px;padding:16px 22px;text-align:center">
+              <div style="font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:32px;color:var(--gold)">×3</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px" lk="tp5_s1">быстрее решения</div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border-g);border-radius:14px;padding:16px 22px;text-align:center">
+              <div style="font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:32px;color:var(--gold)">40%</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px" lk="tp5_s2">меньше издержек</div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border-g);border-radius:14px;padding:16px 22px;text-align:center">
+              <div style="font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:32px;color:var(--gold)">90</div>
+              <div style="font-size:12px;color:var(--text2);margin-top:4px" lk="tp5_s3">дней до результата</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="sec" id="audience">
+  <div class="wrap">
+    <div class="hdr c fu">
+      <div class="tag" lk="a_tag">Для кого</div>
+      <h2 class="sh" lk="a_title">Конференция для собственников, которые строят будущее сегодня</h2>
+      <p class="sd" lk="a_desc">Вход только для владельцев бизнеса и первых лиц компаний. Никаких теоретиков — только практики с реальными историями и задачами.</p>
+    </div>
+    <div class="aud-grid">
+      <div class="ac fu">
+        <div class="ac-ico">🏢</div>
+        <div>
+          <h3 class="ac-role" lk="a1_r">Собственники малого и среднего бизнеса</h3>
+          <p class="ac-d" lk="a1_d">Хотят снизить зависимость от ключевых сотрудников, сохранить знания компании и принимать решения быстрее — без найма дополнительных аналитиков.</p>
+        </div>
+      </div>
+      <div class="ac fu">
+        <div class="ac-ico">📊</div>
+        <div>
+          <h3 class="ac-role" lk="a2_r">CEO и управляющие директора</h3>
+          <p class="ac-d" lk="a2_d">Управляют операционно, но хотят системно встроить ИИ в ежедневные процессы — без технических экспертов в штате и сложных интеграций.</p>
+        </div>
+      </div>
+      <div class="ac fu">
+        <div class="ac-ico">🚀</div>
+        <div>
+          <h3 class="ac-role" lk="a3_r">Основатели стартапов и scale-up</h3>
+          <p class="ac-d" lk="a3_d">Ищут конкурентное преимущество через ИИ. Хотят выстроить knowledge base с нуля — правильно, без переделок через год.</p>
+        </div>
+      </div>
+      <div class="ac fu">
+        <div class="ac-ico">🔄</div>
+        <div>
+          <h3 class="ac-role" lk="a4_r">Собственники в точке масштабирования</h3>
+          <p class="ac-d" lk="a4_d">Растут и сталкиваются с хаосом: знания разрознены, процессы не задокументированы. ИИ-система управления знаниями — как решение.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="sec" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="why-layout">
+      <div class="fu">
+        <div class="tag" lk="w_tag">Почему сейчас</div>
+        <h2 class="sh" lk="w_title">Разрыв между компаниями с ИИ и без — растёт каждый квартал</h2>
+        <p class="sd" lk="w_desc">В Казахстане уже сотни компаний, которые используют ИИ как часть операционной модели. Те, кто ждёт — теряют позиции. Один день, чтобы этого не произошло с вашим бизнесом.</p>
+        <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#register" class="btn btn-g" lk="w_cta">Попасть на день →</a>
+        </div>
+      </div>
+      <div class="metric-list fu">
+        <div class="mi">
+          <div class="mv g">×3</div>
+          <div><h4 lk="m1_t">Скорость стратегических решений</h4><p lk="m1_d">Компании с AI knowledge base принимают решения в 3 раза быстрее конкурентов</p></div>
+        </div>
+        <div class="mi">
+          <div class="mv g">40%</div>
+          <div><h4 lk="m2_t">Снижение операционных потерь</h4><p lk="m2_d">Средний результат через 90 дней после внедрения системы управления знаниями</p></div>
+        </div>
+        <div class="mi">
+          <div class="mv g">80%</div>
+          <div><h4 lk="m3_t">Знаний теряется при уходе сотрудника</h4><p lk="m3_d">AI-система фиксирует и сохраняет экспертизу компании независимо от людей</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="sec" id="program">
+  <div class="wrap">
+    <div class="hdr fu">
+      <div class="tag" lk="pr_tag">Программа дня</div>
+      <h2 class="sh" lk="pr_title">Один насыщенный день</h2>
+      <p class="sd" style="max-width:600px" lk="pr_desc">Нет скучных лекций. Только кейсы, воркшопы и живые разборы. Формат построен так, чтобы вы уходили с готовым планом действий.</p>
+    </div>
+    <div class="prog-timeline">
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">09:00</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr1_n">Регистрация и нетворкинг</h4>
+          <p class="pti-desc" lk="pr1_d">Знакомство участников, кофе. Формируем группы для воркшопа по близким отраслям.</p>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">10:00</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr2_n">Открытие. ИИ-директор: что это значит для вашего бизнеса</h4>
+          <p class="pti-desc" lk="pr2_d">Ключевой доклад: как AI-технологии меняют роль CEO и какие компании уже управляются через интеллектуальные системы. Реальные цифры из Казахстана и мира.</p>
+          <span class="pti-badge">🎤 <span lk="pr2_b">Спикер от партнёра</span></span>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">11:00</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr3_n">Кейс-разбор: система управления знаниями изнутри</h4>
+          <p class="pti-desc" lk="pr3_d">Собственник рассказывает, как в его компании хранились знания «в головах» и как после внедрения AI-системы это изменилось. Разбор архитектуры, ошибок и результатов.</p>
+          <span class="pti-badge">📊 <span lk="pr3_b">Кейс-сессия</span></span>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">12:00</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr4_n">Воркшоп: аудит знаний вашей компании</h4>
+          <p class="pti-desc" lk="pr4_d">Практика. Каждый участник картирует, где хранятся знания его бизнеса сейчас: где потери, где риски, что нужно автоматизировать в первую очередь.</p>
+          <span class="pti-badge">⚙️ <span lk="pr4_b">Практический воркшоп</span></span>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">13:30</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr5_n">Обед и нетворкинг</h4>
+          <p class="pti-desc" lk="pr5_d">Деловой обед. Знакомство с экспертами в неформальной обстановке. Обмен контактами и кейсами между участниками.</p>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">14:30</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr6_n">Панель: инфраструктура и технологии для малого и среднего бизнеса</h4>
+          <p class="pti-desc" lk="pr6_d">Дискуссия экспертов: какие технологии нужны, сколько стоит, как начать без IT-отдела. Вопросы из зала.</p>
+          <span class="pti-badge">💬 <span lk="pr6_b">Панельная дискуссия</span></span>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">15:30</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr7_n">Демо-зона: живые решения от партнёров</h4>
+          <p class="pti-desc" lk="pr7_d">Партнёры конференции показывают реальные работающие системы. Можно задать вопросы, посмотреть в действии, примерить к своему бизнесу.</p>
+          <span class="pti-badge">🔬 <span lk="pr7_b">Демо-сессия</span></span>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-line"></div>
+        <div class="pti-time"><span class="pti-t">16:30</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr8_n">Воркшоп: персональный план на 90 дней</h4>
+          <p class="pti-desc" lk="pr8_d">Каждый участник с помощью эксперта составляет конкретный план: что внедряем, в каком порядке, какой ресурс нужен, что измеряем.</p>
+          <span class="pti-badge">⚙️ <span lk="pr8_b">Практический воркшоп</span></span>
+        </div>
+      </div>
+      <div class="pti fu">
+        <div class="pti-dot"></div>
+        <div class="pti-time"><span class="pti-t">18:00</span></div>
+        <div class="pti-body">
+          <h4 class="pti-name" lk="pr9_n">Закрытие и нетворкинг-ужин</h4>
+          <p class="pti-desc" lk="pr9_d">Итоги дня, вручение материалов. Неформальное продолжение для желающих — знакомства с экспертами и партнёрами конференции.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTS -->
+<section class="sec" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="hdr c fu">
+      <div class="tag" lk="e_tag">Спикеры и эксперты</div>
+      <h2 class="sh" lk="e_title">Только практики. Никаких теоретиков.</h2>
+      <p class="sd" lk="e_desc">Спикеры конференции — это люди, которые уже внедрили то, о чём говорят. Без воды и консалтинга ради консалтинга.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="ec fu">
+        <div class="ec-av">A</div>
+        <div class="ec-name" lk="e1_n">Алексей Беневский</div>
+        <div class="ec-pos" lk="e1_p">Основатель, архитектор AI-систем</div>
+        <div class="ec-co">Benevsky IT Hub</div>
+      </div>
+      <div class="ec fu">
+        <div class="ec-av">M</div>
+        <div class="ec-name" lk="e2_n">Спикер</div>
+        <div class="ec-pos" lk="e2_p">Развитие инноваций и экосистемы</div>
+        <div class="ec-co">Innovation Alliance</div>
+      </div>
+      <div class="ec fu">
+        <div class="ec-av">T</div>
+        <div class="ec-name" lk="e3_n">Спикер</div>
+        <div class="ec-pos" lk="e3_p">IT-инфраструктура и цифровизация</div>
+        <div class="ec-co">Turan Telematica</div>
+      </div>
+      <div class="ec fu">
+        <div class="ec-av">К</div>
+        <div class="ec-name" lk="e4_n">Собственник — кейс 1</div>
+        <div class="ec-pos" lk="e4_p">Реальный опыт внедрения AI knowledge base в казахстанской компании</div>
+        <div class="ec-co" lk="e4_co">Участник-практик</div>
+      </div>
+      <div class="ec fu">
+        <div class="ec-av">О</div>
+        <div class="ec-name" lk="e5_n">Собственник — кейс 2</div>
+        <div class="ec-pos" lk="e5_p">Как масштабировали бизнес, выстроив AI-систему управления данными</div>
+        <div class="ec-co" lk="e5_co">Участник-практик</div>
+      </div>
+      <div class="ec fu" style="border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:160px">
+        <div style="font-size:28px;margin-bottom:10px">+</div>
+        <div class="ec-name" lk="e6_n">Спикеры добавляются</div>
+        <div class="ec-pos" lk="e6_p">Следите за обновлениями</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS FULL -->
+<section class="sec" id="partners">
+  <div class="wrap">
+    <div class="hdr c fu">
+      <div class="tag" lk="pt_tag">Генеральные партнёры</div>
+      <h2 class="sh" lk="pt_title">Три лидера, которые делают это возможным</h2>
+      <p class="sd" lk="pt_desc">Конференция организована при участии ведущих компаний в области ИИ, инноваций и телекоммуникаций Казахстана. Именно они делятся реальными кейсами и экспертизой.</p>
+    </div>
+    <div class="part-grid">
+      <div class="pc main fu">
+        <div class="pc-logo">B</div>
+        <div class="pc-name">Benevsky IT Hub</div>
+        <p class="pc-desc" lk="p1_d">Компания специализируется на разработке AI-систем управления знаниями и интеллектуальных ассистентов для бизнеса. Реализовала десятки проектов для казахстанских компаний разного масштаба — от стартапов до корпораций. Ключевой технологический партнёр конференции.</p>
+        <span class="pc-role" lk="p1_r">Главный организатор</span>
+        <a href="https://benevsky.work/aibusiness" target="_blank" class="pc-link">benevsky.work →</a>
+      </div>
+      <div class="pc fu">
+        <div class="pc-logo">IA</div>
+        <div class="pc-name">Innovation Alliance</div>
+        <p class="pc-desc" lk="p2_d">Экосистема для предпринимателей и инноваторов Казахстана. Объединяет собственников бизнеса, инвесторов и технологические компании. Формирует среду, в которой рождаются и масштабируются новые бизнес-модели. Обеспечивает доступ к экспертному сообществу для участников.</p>
+        <span class="pc-role" lk="p_gen">Генеральный партнёр</span>
+        <a href="https://innovation-allience.vercel.app/" target="_blank" class="pc-link">innovation-allience.vercel.app →</a>
+      </div>
+      <div class="pc fu">
+        <div class="pc-logo">TT</div>
+        <div class="pc-name">Turan Telematica</div>
+        <p class="pc-desc" lk="p3_d">Один из ведущих провайдеров IT и телекоммуникационных решений в Казахстане. Помогает компаниям выстраивать надёжную инфраструктуру для внедрения цифровых технологий. Обеспечивает техническую основу для AI-систем на объектах клиентов.</p>
+        <span class="pc-role" lk="p_gen">Генеральный партнёр</span>
+        <a href="https://telematika.kz/" target="_blank" class="pc-link">telematika.kz →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="sec" id="location" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="hdr c fu">
+      <div class="tag" lk="lc_tag">Место и формат</div>
+      <h2 class="sh" lk="lc_title">Астана — оффлайн, закрытый формат</h2>
+    </div>
+    <div class="loc-card fu">
+      <div class="loc-map">
+        <div class="loc-mg"></div>
+        <div class="loc-dot"></div>
+      </div>
+      <div class="loc-info">
+        <div class="tag" lk="lc_tba">Место уточняется</div>
+        <h3 lk="lc_h3">Закрытая конференция для 50 собственников</h3>
+        <p style="font-size:14.5px;color:var(--text2);line-height:1.7;margin-top:8px" lk="lc_desc">Специально ограниченное число участников — чтобы каждый получил максимум внимания экспертов и качественный нетворкинг. Никаких онлайн-трансляций. Только офлайн.</p>
+        <ul class="loc-ul">
+          <li><span class="li">📍</span><span lk="lc_d1">Астана, Казахстан — точный адрес сообщим участникам</span></li>
+          <li><span class="li">📅</span><span lk="lc_d2">Осень 2026 · Один день с 09:00 до 20:00</span></li>
+          <li><span class="li">👥</span><span lk="lc_d3">50 мест · Только собственники и первые лица компаний</span></li>
+          <li><span class="li">🍽️</span><span lk="lc_d4">Кофе-паузы, деловой обед и нетворкинг-ужин включены</span></li>
+          <li><span class="li">📋</span><span lk="lc_d5">Каждый участник получает материалы и персональный план</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="sec" id="register" style="background:var(--bg3)">
+  <div class="wrap">
+    <div class="reg-layout">
+      <div class="fu">
+        <div class="tag" lk="r_tag">Регистрация</div>
+        <h2 class="sh" lk="r_title">50 мест. Осталось мало.</h2>
+        <p class="sd" lk="r_desc">Закрытый формат — отбор участников. Приоритет отдаётся собственникам с активным бизнесом. Мы свяжемся с вами для подтверждения.</p>
+        <div class="rb-list" style="margin-top:36px">
+          <div class="rb">
+            <div class="rb-ico">🔒</div>
+            <div>
+              <h4 lk="rb1_t">Закрытый формат</h4>
+              <p lk="rb1_d">Только собственники бизнеса. Каждая заявка рассматривается индивидуально — чтобы обеспечить высокий уровень дискуссии.</p>
+            </div>
+          </div>
+          <div class="rb">
+            <div class="rb-ico">📋</div>
+            <div>
+              <h4 lk="rb2_t">Персональный план в подарок</h4>
+              <p lk="rb2_d">Каждый участник получает персональный 90-дневный план внедрения AI-системы управления знаниями, составленный с экспертом.</p>
+            </div>
+          </div>
+          <div class="rb">
+            <div class="rb-ico">🤝</div>
+            <div>
+              <h4 lk="rb3_t">Доступ в сообщество</h4>
+              <p lk="rb3_d">После конференции — вход в закрытый чат выпускников с доступом к экспертам партнёров и ежемесячными разборами кейсов.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fu">
+        <div class="rf" id="regForm">
+          <h3 class="rf-title" lk="f_title">Подать заявку на участие</h3>
+          <div class="fg"><label class="fl" lk="f_name">Имя и фамилия</label><input class="fi" type="text" id="fn" placeholder="Алибек Сейткали"></div>
+          <div class="fg"><label class="fl" lk="f_company">Компания</label><input class="fi" type="text" id="fc" placeholder="ТОО «Ваша компания»"></div>
+          <div class="fg"><label class="fl" lk="f_role">Должность</label><input class="fi" type="text" id="fr" placeholder="Собственник / CEO"></div>
+          <div class="fg"><label class="fl" lk="f_sphere">Сфера бизнеса</label>
+            <select class="fi fsel" id="fs">
+              <option value="" lk="f_choose">Выберите сферу...</option>
+              <option value="retail" lk="f_retail">Торговля / Ритейл</option>
+              <option value="prod" lk="f_prod">Производство</option>
+              <option value="serv" lk="f_serv">Услуги</option>
+              <option value="tech" lk="f_tech">Технологии / IT</option>
+              <option value="fin" lk="f_fin">Финансы</option>
+              <option value="build" lk="f_build">Строительство / Недвижимость</option>
+              <option value="other" lk="f_other">Другое</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl" lk="f_phone">Телефон / WhatsApp</label><input class="fi" type="tel" id="fp" placeholder="+7 700 000 00 00"></div>
+          <button class="fsub" id="fsub" lk="f_sub">Отправить заявку →</button>
+          <p class="fnote" lk="f_note">Мы рассматриваем заявки в течение 2 рабочих дней и свяжемся с вами для подтверждения участия.</p>
+        </div>
+        <div class="succ" id="succMsg">
+          <div class="sck">✅</div>
+          <h3 lk="s_t">Заявка принята!</h3>
+          <p lk="s_d">Мы рассмотрим её в течение 2 рабочих дней и свяжемся с вами по WhatsApp для подтверждения и деталей участия.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="ctaf">
+  <div class="ctag"></div>
+  <div class="wrap">
+    <div class="fu">
+      <div class="tag" lk="cf_tag">AI CEO Day · Астана 2026</div>
+      <h2 ctaf><span lk="cf_t1">Один день.</span><br><span class="g" lk="cf_t2">Трансформация</span><br><span lk="cf_t3">на годы вперёд.</span></h2>
+      <p ctaf lk="cf_sub">50 собственников бизнеса. Лучшие практики AI-внедрения. Персональный план для каждого. Встретимся в Астане.</p>
+      <div class="ctaf-a">
+        <a href="#register" class="btn btn-g" lk="cf_cta1">Подать заявку →</a>
+        <a href="#partners" class="btn btn-o" lk="cf_cta2">О партнёрах</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="fg2">
+      <div class="fb">
+        <div class="logo" style="font-size:15px">AI<span class="a">★</span>CEO DAY</div>
+        <p lk="ft_about">Закрытая однодневная конференция для собственников бизнеса по внедрению AI-технологий и систем управления знаниями. Астана, 2026.</p>
+      </div>
+      <div class="fc"><h4 lk="ft_nav">Навигация</h4>
+        <ul class="flinks">
+          <li><a href="#topic" lk="n_topic">Тема</a></li>
+          <li><a href="#program" lk="n_prog">Программа</a></li>
+          <li><a href="#partners" lk="n_part">Партнёры</a></li>
+          <li><a href="#location" lk="n_loc">Место</a></li>
+          <li><a href="#register" lk="n_reg">Участвовать</a></li>
+        </ul>
+      </div>
+      <div class="fc"><h4 lk="ft_part">Партнёры</h4>
+        <ul class="flinks">
+          <li><a href="https://benevsky.work/aibusiness" target="_blank">Benevsky IT Hub</a></li>
+          <li><a href="https://innovation-allience.vercel.app/" target="_blank">Innovation Alliance</a></li>
+          <li><a href="https://telematika.kz/" target="_blank">Turan Telematica</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span class="fcp" lk="ft_copy">© 2026 AI CEO Day Astana. Все права защищены.</span>
+      <div class="soc">
+        <a href="#" class="sb">✈</a>
+        <a href="#" class="sb">💬</a>
+        <a href="#" class="sb">📷</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+[ctaf]{position:relative;z-index:2}
+.ctaf h2{font-family:'Gilroy-ExtraBold','Inter',sans-serif;font-size:clamp(38px,6vw,80px);letter-spacing:-.04em;line-height:1.05;margin-bottom:22px}
+.ctaf p{font-size:clamp(15px,1.55vw,18px);color:var(--text2);max-width:560px;margin:0 auto 44px;line-height:1.75}
+</style>
+
+<script>
+/* TRANSLATIONS */
+const T={
+ru:{
+  n_topic:"Тема",n_prog:"Программа",n_part:"Партнёры",n_loc:"Место",n_reg:"Участвовать",n_cta:"Записаться →",
+  h_badge:"AI CEO Day — Астана 2026",h_date:"📅 Один день · Офлайн · Астана",
+  h_t1:"ИИ-генеральный",h_t2:"директор",h_t3:"вашего бизнеса",
+  h_sub:"Закрытая однодневная конференция для собственников бизнеса. Разбор реальных кейсов: как внедрить AI-технологии и систему управления знаниями компании — с топовыми профессионалами.",
+  h_cta1:"Забронировать место →",h_cta2:"Программа дня",
+  s1:"мест",s2:"день",s3:"спикеров",s4:"партнёра",
+  ps_label:"Генеральные партнёры",ps1_sub:"AI-решения для бизнеса",ps2_sub:"Экосистема инноваций",ps3_sub:"IT и телекоммуникации",
+  tp_tag:"О чём день",tp_title:"Ваш бизнес управляется данными — или ещё нет",
+  tp_desc:"Компании, которые выстроили систему управления знаниями и подключили ИИ-директора, принимают решения в 3 раза быстрее. Один день — чтобы понять как и начать.",
+  tp1_n:"AI-генеральный директор",tp1_d:"Что это значит на практике: ИИ, который знает всё о вашем бизнесе, анализирует данные и предлагает решения — в режиме реального времени.",
+  tp2_n:"Система управления знаниями",tp2_d:"Как собрать, структурировать и подключить все знания компании: регламенты, отчёты, переписка — чтобы ИИ мог с ними работать.",
+  tp3_n:"Реальные кейсы внедрения",tp3_d:"Разборы от собственников, которые уже прошли этот путь: что работает, сколько стоит, какой результат через 3 месяца.",
+  tp4_n:"Практические воркшопы",tp4_d:"Работаем с вашей бизнес-ситуацией прямо на месте. Уходите с конкретным планом первых шагов — персональным роадмапом.",
+  tp5_n:"Главный результат дня",tp5_d:"Каждый участник уходит с персональным планом внедрения AI-системы управления знаниями для своего бизнеса — составленным с экспертами прямо на конференции.",
+  tp5_s1:"быстрее решения",tp5_s2:"меньше издержек",tp5_s3:"дней до результата",
+  a_tag:"Для кого",a_title:"Конференция для собственников, которые строят будущее сегодня",
+  a_desc:"Вход только для владельцев бизнеса и первых лиц компаний. Никаких теоретиков — только практики.",
+  a1_r:"Собственники малого и среднего бизнеса",a1_d:"Хотят снизить зависимость от ключевых сотрудников, сохранить знания компании и принимать решения быстрее.",
+  a2_r:"CEO и управляющие директора",a2_d:"Управляют операционно, но хотят системно встроить ИИ в ежедневные процессы — без технических экспертов в штате.",
+  a3_r:"Основатели стартапов и scale-up",a3_d:"Ищут конкурентное преимущество через ИИ. Хотят выстроить knowledge base с нуля — правильно.",
+  a4_r:"Собственники в точке масштабирования",a4_d:"Растут и сталкиваются с хаосом: знания разрознены, процессы не задокументированы. AI-система как решение.",
+  w_tag:"Почему сейчас",w_title:"Разрыв между компаниями с ИИ и без — растёт каждый квартал",
+  w_desc:"В Казахстане уже сотни компаний, которые используют ИИ как часть операционной модели. Те, кто ждёт — теряют позиции.",
+  w_cta:"Попасть на день →",
+  m1_t:"Скорость стратегических решений",m1_d:"Компании с AI knowledge base принимают решения в 3 раза быстрее конкурентов",
+  m2_t:"Снижение операционных потерь",m2_d:"Средний результат через 90 дней после внедрения системы управления знаниями",
+  m3_t:"Знаний теряется при уходе сотрудника",m3_d:"AI-система фиксирует и сохраняет экспертизу компании независимо от людей",
+  pr_tag:"Программа дня",pr_title:"Один насыщенный день",
+  pr_desc:"Нет скучных лекций. Только кейсы, воркшопы и живые разборы.",
+  pr1_n:"Регистрация и нетворкинг",pr1_d:"Знакомство участников, кофе. Формируем группы для воркшопа по близким отраслям.",
+  pr2_n:"Открытие. ИИ-директор: что это значит для вашего бизнеса",pr2_d:"Ключевой доклад: как AI-технологии меняют роль CEO. Реальные цифры из Казахстана и мира.",pr2_b:"Спикер от партнёра",
+  pr3_n:"Кейс-разбор: система управления знаниями изнутри",pr3_d:"Собственник рассказывает, как после внедрения AI-системы изменился его бизнес. Разбор архитектуры, ошибок и результатов.",pr3_b:"Кейс-сессия",
+  pr4_n:"Воркшоп: аудит знаний вашей компании",pr4_d:"Каждый участник картирует, где хранятся знания его бизнеса сейчас: где потери, что нужно автоматизировать.",pr4_b:"Практический воркшоп",
+  pr5_n:"Обед и нетворкинг",pr5_d:"Деловой обед. Знакомство с экспертами в неформальной обстановке.",
+  pr6_n:"Панель: инфраструктура и технологии для бизнеса",pr6_d:"Дискуссия экспертов: какие технологии нужны, сколько стоит, как начать без IT-отдела.",pr6_b:"Панельная дискуссия",
+  pr7_n:"Демо-зона: живые решения от партнёров",pr7_d:"Партнёры показывают реальные работающие системы. Можно задать вопросы и примерить к своему бизнесу.",pr7_b:"Демо-сессия",
+  pr8_n:"Воркшоп: персональный план на 90 дней",pr8_d:"Каждый участник с помощью эксперта составляет конкретный план внедрения.",pr8_b:"Практический воркшоп",
+  pr9_n:"Закрытие и нетворкинг-ужин",pr9_d:"Итоги дня, вручение материалов. Неформальное продолжение для желающих.",
+  e_tag:"Спикеры и эксперты",e_title:"Только практики. Никаких теоретиков.",
+  e_desc:"Спикеры — люди, которые уже внедрили то, о чём говорят.",
+  e1_n:"Алексей Беневский",e1_p:"Основатель, архитектор AI-систем",
+  e2_n:"Спикер",e2_p:"Развитие инноваций и экосистемы",
+  e3_n:"Спикер",e3_p:"IT-инфраструктура и цифровизация",
+  e4_n:"Собственник — кейс 1",e4_p:"Реальный опыт внедрения AI knowledge base в казахстанской компании",e4_co:"Участник-практик",
+  e5_n:"Собственник — кейс 2",e5_p:"Как масштабировали бизнес, выстроив AI-систему управления данными",e5_co:"Участник-практик",
+  e6_n:"Спикеры добавляются",e6_p:"Следите за обновлениями",
+  pt_tag:"Генеральные партнёры",pt_title:"Три лидера, которые делают это возможным",
+  pt_desc:"Конференция организована при участии ведущих компаний в области ИИ, инноваций и телекоммуникаций Казахстана.",
+  p1_d:"Компания специализируется на разработке AI-систем управления знаниями и интеллектуальных ассистентов для бизнеса. Реализовала десятки проектов для казахстанских компаний. Ключевой технологический партнёр конференции.",
+  p1_r:"Главный организатор",
+  p2_d:"Экосистема для предпринимателей и инноваторов Казахстана. Объединяет собственников бизнеса, инвесторов и технологические компании. Обеспечивает доступ к экспертному сообществу для участников.",
+  p3_d:"Один из ведущих провайдеров IT и телекоммуникационных решений в Казахстане. Помогает компаниям выстраивать надёжную инфраструктуру для внедрения цифровых технологий.",
+  p_gen:"Генеральный партнёр",
+  lc_tag:"Место и формат",lc_title:"Астана — оффлайн, закрытый формат",
+  lc_tba:"Место уточняется",lc_h3:"Закрытая конференция для 50 собственников",
+  lc_desc:"Специально ограниченное число участников — чтобы каждый получил максимум внимания экспертов и качественный нетворкинг.",
+  lc_d1:"Астана, Казахстан — точный адрес сообщим участникам",lc_d2:"Осень 2026 · Один день с 09:00 до 20:00",
+  lc_d3:"50 мест · Только собственники и первые лица компаний",lc_d4:"Кофе-паузы, деловой обед и нетворкинг-ужин включены",lc_d5:"Каждый участник получает материалы и персональный план",
+  r_tag:"Регистрация",r_title:"50 мест. Осталось мало.",r_desc:"Закрытый формат — отбор участников. Приоритет отдаётся собственникам с активным бизнесом.",
+  rb1_t:"Закрытый формат",rb1_d:"Только собственники бизнеса. Каждая заявка рассматривается индивидуально.",
+  rb2_t:"Персональный план в подарок",rb2_d:"Каждый участник получает 90-дневный план внедрения AI-системы управления знаниями.",
+  rb3_t:"Доступ в сообщество",rb3_d:"После конференции — вход в закрытый чат выпускников с доступом к экспертам партнёров.",
+  f_title:"Подать заявку на участие",f_name:"Имя и фамилия",f_company:"Компания",f_role:"Должность",f_sphere:"Сфера бизнеса",
+  f_choose:"Выберите сферу...",f_retail:"Торговля / Ритейл",f_prod:"Производство",f_serv:"Услуги",f_tech:"Технологии / IT",f_fin:"Финансы",f_build:"Строительство / Недвижимость",f_other:"Другое",
+  f_phone:"Телефон / WhatsApp",f_sub:"Отправить заявку →",f_note:"Рассматриваем заявки в течение 2 рабочих дней и свяжемся с вами для подтверждения.",
+  s_t:"Заявка принята!",s_d:"Мы рассмотрим её в течение 2 рабочих дней и свяжемся по WhatsApp.",
+  cf_tag:"AI CEO Day · Астана 2026",cf_t1:"Один день.",cf_t2:"Трансформация",cf_t3:"на годы вперёд.",
+  cf_sub:"50 собственников бизнеса. Лучшие практики AI-внедрения. Персональный план для каждого.",cf_cta1:"Подать заявку →",cf_cta2:"О партнёрах",
+  ft_about:"Закрытая однодневная конференция для собственников бизнеса. Астана, 2026.",ft_nav:"Навигация",ft_part:"Партнёры",ft_copy:"© 2026 AI CEO Day Astana. Все права защищены."
+},
+kz:{
+  n_topic:"Тақырып",n_prog:"Бағдарлама",n_part:"Серіктестер",n_loc:"Орын",n_reg:"Қатысу",n_cta:"Тіркелу →",
+  h_badge:"AI CEO Day — Астана 2026",h_date:"📅 Бір күн · Офлайн · Астана",
+  h_t1:"Жасанды интеллект",h_t2:"бас директоры",h_t3:"сіздің бизнесіңізде",
+  h_sub:"Бизнес иелеріне арналған жабық бір күндік конференция. Нақты кейстер: AI-технологиялар мен білім басқару жүйесін қалай енгізуге болады — үздік мамандармен бірге.",
+  h_cta1:"Орын брондау →",h_cta2:"Күн бағдарламасы",
+  s1:"орын",s2:"күн",s3:"спикер",s4:"серіктес",
+  ps_label:"Бас серіктестер",ps1_sub:"Бизнеске AI-шешімдер",ps2_sub:"Инновациялар экожүйесі",ps3_sub:"IT және телекоммуникация",
+  tp_tag:"Күн нені",tp_title:"Бизнесіңіз деректермен басқарылады — немесе әлі жоқ",
+  tp_desc:"Білім басқару жүйесін және AI-директорды қосқан компаниялар 3 есе жылдам шешім қабылдайды. Бір күн — қалай бастауды түсіну үшін.",
+  tp1_n:"AI-бас директор",tp1_d:"Бұл іс жүзінде не дегені: бизнесіңіз туралы бәрін білетін, деректерді талдайтын ЖИ — нақты уақытта.",
+  tp2_n:"Білімді басқару жүйесі",tp2_d:"Компанияның барлық білімін жинау, құрылымдау: регламенттер, есептер, хат-хабар — ЖИ жұмыс істей алатындай.",
+  tp3_n:"Нақты енгізу кейстері",tp3_d:"Осы жолды жүріп өткен иелердің талдауы: не жұмыс істейді, қанша тұрады, 3 айдан кейін нәтиже қандай.",
+  tp4_n:"Практикалық семинарлар",tp4_d:"Бизнес жағдайыңызбен тікелей жұмыс. Жеке жол картасымен кетесіз.",
+  tp5_n:"Күннің басты нәтижесі",tp5_d:"Әр қатысушы конференцияда сарапшылармен бірге жасалған AI білімді басқару жүйесін енгізудің жеке жоспарымен кетеді.",
+  tp5_s1:"жылдам шешімдер",tp5_s2:"шығын азаяды",tp5_s3:"күн нәтижеге",
+  a_tag:"Кім үшін",a_title:"Бүгін болашақты салып жатқан иелерге арналған конференция",
+  a_desc:"Тек бизнес иелері мен бірінші тұлғалар үшін. Тек тәжірибешілер.",
+  a1_r:"Шағын және орта бизнес иелері",a1_d:"Негізгі қызметкерлерге тәуелділікті азайтқысы, компания білімін сақтағысы келеді.",
+  a2_r:"CEO және басқарушы директорлар",a2_d:"Операциялық басқарады, бірақ ЖИ-ды жүйелі түрде күнделікті процестерге енгізгісі келеді.",
+  a3_r:"Стартаптар мен scale-up негізін қалаушылар",a3_d:"ЖИ арқылы бәсекелестік артықшылық іздейді. Knowledge base-ті дұрыс қалыптастырғысы келеді.",
+  a4_r:"Масштабтау нүктесіндегі иелер",a4_d:"Өседі және хаосқа тіреледі: білімдер шашыраңқы, процестер құжатталмаған. AI-жүйе шешім ретінде.",
+  w_tag:"Неліктен қазір",w_title:"ЖИ-мен және онсыз компаниялар арасындағы алшақтық — тоқсан сайын өседі",
+  w_desc:"Қазақстанда ЖИ-ды операциялық модельдің бөлігі ретінде пайдаланатын жүздеген компания бар. Күтетіндер позиция жоғалтады.",
+  w_cta:"Күнге тіркелу →",
+  m1_t:"Стратегиялық шешімдер жылдамдығы",m1_d:"AI knowledge base бар компаниялар бәсекелестерден 3 есе жылдам шешім қабылдайды",
+  m2_t:"Операциялық шығындарды азайту",m2_d:"Білімді басқару жүйесін енгізгеннен кейін 90 күндегі орташа нәтиже",
+  m3_t:"Қызметкер кетпекте білім жоғалады",m3_d:"AI-жүйе компанияның тәжірибесін адамдардан тәуелсіз тіркейді",
+  pr_tag:"Күн бағдарламасы",pr_title:"Бір қанық күн",pr_desc:"Жалықтыратын дәрістер жоқ. Тек кейстер, семинарлар және тікелей талдаулар.",
+  pr1_n:"Тіркелу және желілеу",pr1_d:"Қатысушылармен танысу, кофе. Жақын салалар бойынша топтар қаламыз.",
+  pr2_n:"Ашылу. AI-директор: бизнесіңіз үшін бұл не",pr2_d:"Негізгі баяндама: AI-технологиялары CEO рөлін қалай өзгертеді.",pr2_b:"Серіктес спикері",
+  pr3_n:"Кейс-талдау: білімді басқару жүйесі ішінен",pr3_d:"Иесі AI-жүйесін енгізгеннен кейін бизнес қалай өзгергенін айтады.",pr3_b:"Кейс-сессия",
+  pr4_n:"Семинар: компанияңыздың білімін аудит жасау",pr4_d:"Әр қатысушы бизнестің білімі қазір қайда сақталатынын картаға түсіреді.",pr4_b:"Практикалық семинар",
+  pr5_n:"Түскі ас және желілеу",pr5_d:"Іскерлік түскі ас. Бейресми ортада сарапшылармен танысу.",
+  pr6_n:"Панель: бизнеске арналған инфрақұрылым",pr6_d:"Сарапшылар дискуссиясы: қандай технологиялар керек, қанша тұрады, IT-бөлімінсіз қалай бастауға болады.",pr6_b:"Панельдік дискуссия",
+  pr7_n:"Демо-аймақ: серіктестердің тікелей шешімдері",pr7_d:"Серіктестер нақты жұмыс жасайтын жүйелерді көрсетеді.",pr7_b:"Демо-сессия",
+  pr8_n:"Семинар: 90 күнге жеке жоспар",pr8_d:"Әр қатысушы сарапшымен бірге нақты енгізу жоспарын жасайды.",pr8_b:"Практикалық семинар",
+  pr9_n:"Жабылу және желілеу кеші",pr9_d:"Күн қорытындылары, материалдар тапсыру.",
+  e_tag:"Спикерлер мен сарапшылар",e_title:"Тек тәжірибешілер. Теоретиктер жоқ.",e_desc:"Спикерлер — айтқандарын бұрыннан енгізген адамдар.",
+  e1_n:"Алексей Беневский",e1_p:"Негізін қалаушы, AI-жүйелер сәулетшісі",
+  e2_n:"Спикер",e2_p:"Инновациялар дамыту",
+  e3_n:"Спикер",e3_p:"IT-инфрақұрылым және цифрландыру",
+  e4_n:"Иесі — кейс 1",e4_p:"Қазақстандық компанияда AI knowledge base енгізудің нақты тәжірибесі",e4_co:"Тәжірибеші қатысушы",
+  e5_n:"Иесі — кейс 2",e5_p:"AI деректер басқару жүйесін құра отырып бизнесті қалай масштабтады",e5_co:"Тәжірибеші қатысушы",
+  e6_n:"Спикерлер қосылуда",e6_p:"Жаңартуларды қадағалаңыз",
+  pt_tag:"Бас серіктестер",pt_title:"Мұны мүмкін ететін үш лидер",
+  pt_desc:"Конференция Қазақстанның ЖИ, инновациялар және телекоммуникация саласының жетекші компанияларымен ұйымдастырылды.",
+  p1_d:"Компания бизнеске арналған AI білімді басқару жүйелерін және интеллектуалды ассистенттерді әзірлеуге маманданған. Қазақстандық компаниялар үшін ондаған жоба іске асырды.",
+  p1_r:"Басты ұйымдастырушы",
+  p2_d:"Қазақстанның кәсіпкерлері мен инноваторларына арналған экожүйе. Бизнес иелерін, инвесторларды және технологиялық компанияларды біріктіреді.",
+  p3_d:"Қазақстандағы IT және телекоммуникациялық шешімдердің жетекші провайдерлерінің бірі. Цифрлық технологияларды енгізуге арналған сенімді инфрақұрылым құруға көмектеседі.",
+  p_gen:"Бас серіктес",
+  lc_tag:"Орын мен формат",lc_title:"Астана — офлайн, жабық формат",
+  lc_tba:"Орын нақтыланады",lc_h3:"50 иеге арналған жабық конференция",
+  lc_desc:"Қатысушылар санын арнайы шектеу — әр қатысушы сарапшылардың максималды назарын алу үшін.",
+  lc_d1:"Астана, Қазақстан — нақты мекен-жайды қатысушыларға хабарлаймыз",lc_d2:"2026 күзі · 09:00-ден 20:00-ге дейін бір күн",
+  lc_d3:"50 орын · Тек иелер мен бірінші тұлғалар",lc_d4:"Кофе-үзілістер, іскерлік түскі ас және желілеу кеші кіреді",lc_d5:"Әр қатысушы материалдар мен жеке жоспар алады",
+  r_tag:"Тіркелу",r_title:"50 орын. Аз қалды.",r_desc:"Жабық формат — қатысушыларды іріктеу. Белсенді бизнес иелеріне басымдық беріледі.",
+  rb1_t:"Жабық формат",rb1_d:"Тек бизнес иелері. Әр өтінім жеке қаралады.",
+  rb2_t:"Жеке жоспар сыйлық ретінде",rb2_d:"Әр қатысушы AI білімді басқару жүйесін енгізудің 90 күндік жоспарын алады.",
+  rb3_t:"Қауымдастыққа кіру",rb3_d:"Конференциядан кейін — серіктестер сарапшыларына қол жеткізу мүмкіндігі бар жабық чат.",
+  f_title:"Қатысуға өтінім беру",f_name:"Аты-жөні",f_company:"Компания",f_role:"Лауазым",f_sphere:"Бизнес саласы",
+  f_choose:"Саланы таңдаңыз...",f_retail:"Сауда / Ритейл",f_prod:"Өндіріс",f_serv:"Қызметтер",f_tech:"Технологиялар / IT",f_fin:"Қаржы",f_build:"Құрылыс / Жылжымайтын мүлік",f_other:"Басқа",
+  f_phone:"Телефон / WhatsApp",f_sub:"Өтінім жіберу →",f_note:"2 жұмыс күні ішінде өтінімдерді қараймыз және қатысуды растау үшін хабарласамыз.",
+  s_t:"Өтінім қабылданды!",s_d:"2 жұмыс күні ішінде WhatsApp арқылы хабарласамыз.",
+  cf_tag:"AI CEO Day · Астана 2026",cf_t1:"Бір күн.",cf_t2:"Жылдар",cf_t3:"алға трансформация.",
+  cf_sub:"50 бизнес иесі. Үздік AI енгізу тәжірибелері. Әр қатысушыға жеке жоспар.",cf_cta1:"Өтінім беру →",cf_cta2:"Серіктестер туралы",
+  ft_about:"Бизнес иелеріне арналған жабық бір күндік конференция. Астана, 2026.",ft_nav:"Навигация",ft_part:"Серіктестер",ft_copy:"© 2026 AI CEO Day Astana. Барлық құқықтар қорғалған."
+},
+en:{
+  n_topic:"Topic",n_prog:"Program",n_part:"Partners",n_loc:"Venue",n_reg:"Attend",n_cta:"Register →",
+  h_badge:"AI CEO Day — Astana 2026",h_date:"📅 One Day · Offline · Astana",
+  h_t1:"AI Chief",h_t2:"Executive",h_t3:"for your business",
+  h_sub:"A closed one-day conference for business owners. Real case studies: how to implement AI technologies and a company knowledge management system — with top professionals.",
+  h_cta1:"Book Your Spot →",h_cta2:"Day Program",
+  s1:"seats",s2:"day",s3:"speakers",s4:"partners",
+  ps_label:"General Partners",ps1_sub:"AI solutions for business",ps2_sub:"Innovation ecosystem",ps3_sub:"IT & telecommunications",
+  tp_tag:"What's the day about",tp_title:"Your business is data-driven — or it isn't yet",
+  tp_desc:"Companies that built a knowledge management system and connected an AI director make decisions 3x faster. One day to understand how and get started.",
+  tp1_n:"AI Chief Executive",tp1_d:"What it means in practice: AI that knows everything about your business, analyzes data and proposes solutions — in real time.",
+  tp2_n:"Knowledge Management System",tp2_d:"How to collect, structure and connect all company knowledge: regulations, reports, correspondence — so AI can work with it.",
+  tp3_n:"Real Implementation Cases",tp3_d:"Breakdowns from owners who have already gone through this: what works, what it costs, what the result looks like after 3 months.",
+  tp4_n:"Practical Workshops",tp4_d:"Work with your specific business situation right there. You leave with a concrete first-steps plan — a personal roadmap, not generic advice.",
+  tp5_n:"The Main Result of the Day",tp5_d:"Each participant leaves with a personal AI knowledge management system implementation plan — built together with experts right at the conference.",
+  tp5_s1:"faster decisions",tp5_s2:"less overhead",tp5_s3:"days to results",
+  a_tag:"Who It's For",a_title:"A conference for owners who are building the future today",
+  a_desc:"Entry for business owners and company executives only. No theorists — only practitioners with real stories.",
+  a1_r:"Small & Medium Business Owners",a1_d:"Want to reduce dependence on key employees, preserve company knowledge and make decisions faster.",
+  a2_r:"CEOs & Managing Directors",a2_d:"Run operations but want to systematically embed AI into daily processes — without in-house technical experts.",
+  a3_r:"Startup & Scale-up Founders",a3_d:"Looking for competitive advantage through AI. Want to build a knowledge base from scratch — correctly.",
+  a4_r:"Owners at the Scaling Inflection Point",a4_d:"Growing and hitting chaos: knowledge is scattered, processes undocumented. An AI system as the solution.",
+  w_tag:"Why Now",w_title:"The gap between companies with AI and without — grows every quarter",
+  w_desc:"Hundreds of companies in Kazakhstan already use AI as part of their operating model. Those who wait are losing ground.",
+  w_cta:"Join the Day →",
+  m1_t:"Speed of Strategic Decisions",m1_d:"Companies with an AI knowledge base make decisions 3x faster than competitors",
+  m2_t:"Reduction in Operational Losses",m2_d:"Average result 90 days after implementing a knowledge management system",
+  m3_t:"Of Knowledge Is Lost When an Employee Leaves",m3_d:"An AI system captures and preserves company expertise regardless of people",
+  pr_tag:"Day Program",pr_title:"One packed day",pr_desc:"No boring lectures. Only cases, workshops and live breakdowns.",
+  pr1_n:"Registration & Networking",pr1_d:"Meet participants, coffee. Forming workshop groups by industry.",
+  pr2_n:"Opening. AI Director: What It Means for Your Business",pr2_d:"Keynote: how AI technologies are changing the CEO role. Real figures from Kazakhstan and the world.",pr2_b:"Partner Speaker",
+  pr3_n:"Case Breakdown: Knowledge Management System from the Inside",pr3_d:"An owner shares how their business changed after implementing an AI system. Architecture, mistakes and results.",pr3_b:"Case Session",
+  pr4_n:"Workshop: Auditing Your Company's Knowledge",pr4_d:"Each participant maps where their business knowledge lives now: where losses are, what to automate first.",pr4_b:"Practical Workshop",
+  pr5_n:"Lunch & Networking",pr5_d:"Business lunch. Meeting experts in an informal setting. Exchanging contacts and cases.",
+  pr6_n:"Panel: Infrastructure & Technology for Business",pr6_d:"Expert discussion: what technologies are needed, what it costs, how to start without an IT department.",pr6_b:"Panel Discussion",
+  pr7_n:"Demo Zone: Live Solutions from Partners",pr7_d:"Partners demonstrate real working systems. You can ask questions and see how they apply to your business.",pr7_b:"Demo Session",
+  pr8_n:"Workshop: Your Personal 90-Day Plan",pr8_d:"Each participant creates a concrete implementation plan with an expert's help.",pr8_b:"Practical Workshop",
+  pr9_n:"Closing & Networking Dinner",pr9_d:"Day wrap-up, materials handover. Informal continuation for those who want to keep connecting.",
+  e_tag:"Speakers & Experts",e_title:"Practitioners only. No theorists.",e_desc:"Speakers are people who have already implemented what they talk about.",
+  e1_n:"Alexey Benevsky",e1_p:"Founder, AI Systems Architect",
+  e2_n:"Speaker",e2_p:"Innovation & Ecosystem Development",
+  e3_n:"Speaker",e3_p:"IT Infrastructure & Digitalization",
+  e4_n:"Owner — Case 1",e4_p:"Real experience implementing an AI knowledge base in a Kazakhstani company",e4_co:"Practitioner Participant",
+  e5_n:"Owner — Case 2",e5_p:"How they scaled by building an AI data management system",e5_co:"Practitioner Participant",
+  e6_n:"More speakers coming",e6_p:"Stay tuned for updates",
+  pt_tag:"General Partners",pt_title:"Three leaders who make this possible",
+  pt_desc:"The conference is organized with the participation of leading companies in AI, innovation and telecommunications in Kazakhstan.",
+  p1_d:"The company specializes in developing AI knowledge management systems and intelligent business assistants. Has delivered dozens of projects for Kazakhstani companies of all sizes. Key technology partner of the conference.",
+  p1_r:"Main Organizer",
+  p2_d:"An ecosystem for entrepreneurs and innovators in Kazakhstan. Unites business owners, investors and tech companies. Provides access to an expert community for participants.",
+  p3_d:"One of the leading IT and telecommunications solution providers in Kazakhstan. Helps companies build reliable infrastructure for implementing digital technologies.",
+  p_gen:"General Partner",
+  lc_tag:"Venue & Format",lc_title:"Astana — Offline, Closed Format",
+  lc_tba:"Venue TBA",lc_h3:"A closed conference for 50 business owners",
+  lc_desc:"Deliberately limited number of participants — so each person gets maximum expert attention and quality networking.",
+  lc_d1:"Astana, Kazakhstan — exact address shared with confirmed participants",lc_d2:"Fall 2026 · One day, 09:00 to 20:00",
+  lc_d3:"50 seats · Owners and company executives only",lc_d4:"Coffee breaks, business lunch and networking dinner included",lc_d5:"Each participant receives materials and a personal plan",
+  r_tag:"Registration",r_title:"50 seats. Few left.",r_desc:"Closed format — participant screening. Priority given to owners with active businesses.",
+  rb1_t:"Closed Format",rb1_d:"Business owners only. Each application is reviewed individually.",
+  rb2_t:"Personal Plan as a Gift",rb2_d:"Each participant gets a 90-day AI knowledge management implementation plan built with an expert.",
+  rb3_t:"Community Access",rb3_d:"After the conference — entry into a private alumni chat with access to partner experts.",
+  f_title:"Apply to Participate",f_name:"Full Name",f_company:"Company",f_role:"Position",f_sphere:"Business Sector",
+  f_choose:"Select sector...",f_retail:"Retail / Trade",f_prod:"Manufacturing",f_serv:"Services",f_tech:"Technology / IT",f_fin:"Finance",f_build:"Construction / Real Estate",f_other:"Other",
+  f_phone:"Phone / WhatsApp",f_sub:"Submit Application →",f_note:"Applications are reviewed within 2 business days. We'll contact you to confirm.",
+  s_t:"Application Received!",s_d:"We'll review it within 2 business days and reach out via WhatsApp.",
+  cf_tag:"AI CEO Day · Astana 2026",cf_t1:"One day.",cf_t2:"Transformation",cf_t3:"for years ahead.",
+  cf_sub:"50 business owners. Best AI implementation practices. A personal plan for each participant.",cf_cta1:"Submit Application →",cf_cta2:"About Partners",
+  ft_about:"A closed one-day conference for business owners on AI implementation. Astana, 2026.",ft_nav:"Navigation",ft_part:"Partners",ft_copy:"© 2026 AI CEO Day Astana. All rights reserved."
+}};
+
+let lang='ru';
+function applyLang(l){
+  lang=l;
+  document.documentElement.lang=l;
+  const d=T[l];
+  document.querySelectorAll('[lk]').forEach(el=>{
+    const k=el.getAttribute('lk');
+    if(d[k]!==undefined) el.textContent=d[k];
+  });
+  // placeholders
+  const ph={ru:{fn:'Алибек Сейткали',fc:'ТОО «Ваша компания»',fr:'Собственник / CEO',fp:'+7 700 000 00 00'},
+    kz:{fn:'Әлібек Сейтқали',fc:'ЖШС «Сіздің компанияңыз»',fr:'Иесі / CEO',fp:'+7 700 000 00 00'},
+    en:{fn:'Alibek Seitkali',fc:'Your Company LLC',fr:'Owner / CEO',fp:'+7 700 000 00 00'}};
+  const p=ph[l];
+  ['fn','fc','fr','fp'].forEach(id=>{const el=document.getElementById(id);if(el)el.placeholder=p[id];});
+}
+
+// lang btns
+document.querySelectorAll('.lb').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.lb').forEach(b=>b.classList.remove('on'));
+    document.querySelectorAll(`.lb[data-lang="${btn.dataset.lang}"]`).forEach(b=>b.classList.add('on'));
+    applyLang(btn.dataset.lang);
+  });
+});
+
+// theme
+let dark=true;
+function toggleTheme(){
+  dark=!dark;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  document.querySelectorAll('.tt').forEach(t=>t.textContent=dark?'🌙':'☀️');
+}
+document.getElementById('tt').addEventListener('click',toggleTheme);
+document.getElementById('tt2').addEventListener('click',toggleTheme);
+
+// nav scroll
+const navEl=document.getElementById('nav');
+window.addEventListener('scroll',()=>navEl.classList.toggle('s',scrollY>40));
+
+// hamburger
+const hbg=document.getElementById('hbg'),mn=document.getElementById('mn');
+hbg.addEventListener('click',()=>mn.classList.toggle('open'));
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mn.classList.remove('open')));
+
+// particles
+(function(){const c=document.getElementById('parts');for(let i=0;i<18;i++){const p=document.createElement('div');p.className='p';const s=2+Math.random()*3;p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;--d:${7+Math.random()*9}s;--dl:${Math.random()*12}s;--o:${.15+Math.random()*.4}`;c.appendChild(p);}})();
+
+// intersection
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.1});
+document.querySelectorAll('.fu').forEach(el=>io.observe(el));
+
+// form
+document.getElementById('fsub').addEventListener('click',()=>{
+  const n=document.getElementById('fn').value.trim(),p=document.getElementById('fp').value.trim();
+  const msg={ru:'Пожалуйста, заполните имя и телефон',kz:'Атыңызды және телефонды толтырыңыз',en:'Please fill in name and phone'};
+  if(!n||!p){alert(msg[lang]);return;}
+  document.getElementById('regForm').style.display='none';
+  document.getElementById('succMsg').classList.add('on');
+});
+
+applyLang('ru');
+</script>
+</body>
+</html>
